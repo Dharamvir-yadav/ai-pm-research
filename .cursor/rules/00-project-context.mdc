@@ -1,0 +1,25 @@
+---
+description: Project context and research boundaries for AI PM workflow
+alwaysApply: true
+---
+
+# Project Context & Boundaries
+
+## Purpose
+This project is used for **feature-level research and requirements** within a defined product scope. Research stays inside these boundaries and is done **with the current solution in context**.
+
+## What You Must Know
+- **Product**: Gen AI application. Parent solution is **Fleet management**. Key persona is **IT Admin**.
+- **Current solution**: The product today includes:
+  1. **KB (Q&A)** — "How to" question-and-answer over knowledge base.
+  2. **Data insights** — Questions about the user's IT fleet (analytics, reporting).
+  3. **Actions** — Initiating actions from the chatbot (e.g. system scan, system update).
+  4. **Agentic workflows** — Plan-and-execute agents (single or multi-flow); user manually triggers planning via a prompt today; the product is evolving toward more autonomous agents.
+- **Project brief**: See `AGENTS.md` or the user's message for "what we are doing" on a given initiative.
+- **Research topic**: The user provides 1–2 lines (or 2–3 lines) describing the feature or research question.
+- **Current UI**: Screenshots or images in `context/` or attached in chat show how the application looks today. Use them only for **theme, layout, and current behaviour**—do not infer requirements or features not stated in the research topic or requirements.
+
+## Boundaries
+- Research must stay **within the product and user context** described above. Keep the **current solution** in mind when researching.
+- Do not invent scope. If something is out of scope, say so and do not include it in requirements or stories.
+- When in doubt, prefer **narrower, explicit scope** over broad assumptions.

@@ -1,0 +1,17 @@
+---
+description: Jira project and Confluence space defaults for Atlassian MCP
+alwaysApply: true
+---
+
+# Jira & Confluence Defaults (Atlassian MCP)
+
+When using the atlassian MCP server:
+
+- **Jira project key**: Use the value set in this project (see `AGENTS.md` or the "Jira & Confluence" section in project docs). Example: `YOURPROJ`. Do NOT guess or call discovery tools for project key unless it is missing.
+- **Confluence space**: Use the space key or ID set in this project (see `AGENTS.md`). Example: space key `PROD` or space ID `123456`. Do NOT guess.
+- **Epic**: Use the Jira Epic key/number provided by the user for this initiative. Do not guess. If missing when creating or linking Jira stories, **ask** the user for the Epic number.
+- **Confluence page**: Use the Confluence page (ID or title) provided by the user for the requirements. Do not guess. If missing when creating or updating the requirement page, **ask** the user for the Confluence page.
+- **Search limits**: Use `maxResults: 10` or `limit: 10` for Jira JQL and Confluence CQL searches unless the user asks for more.
+- **Cloud/site**: If the project specifies a cloud ID or base URL (e.g. `https://yoursite.atlassian.net`), use it; do not call `getAccessibleAtlassianResources` unnecessarily.
+
+Update `AGENTS.md` (or this rule’s docs) when you onboard: set the real Jira project key and Confluence space for your team.

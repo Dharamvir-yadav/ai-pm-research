@@ -1,0 +1,17 @@
+---
+description: Every user story must map to a specific requirement (traceability)
+alwaysApply: true
+---
+
+# Story–Requirement Traceability
+
+Every user story and technical task **must map to at least one requirement** from the Confluence requirement page.
+
+## Rules
+- **Requirement IDs**: The Confluence page uses stable requirement IDs (e.g. `REQ-1`, `REQ-2`). Each story must reference which requirement(s) it fulfils.
+- **In Jira**: In the story description or a custom field (if your Jira has one), include a line like: **Maps to:** `REQ-1`, `REQ-2`.
+- **Validation**: Before publishing stories to Jira, check that (1) every requirement has at least one story, and (2) every story has at least one requirement ID. Flag any requirement with no story and any story with no requirement.
+- **Technical tasks**: Sub-tasks or technical tasks should link to the parent story; the parent story holds the requirement mapping. If a task directly implements a requirement, it may also list the requirement ID.
+
+## Agent role
+When creating or reviewing stories, the agent **ensures** this mapping is explicit and complete. If the user asks "ensure story maps to requirement," run this check and fix or report gaps.

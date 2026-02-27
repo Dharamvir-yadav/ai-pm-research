@@ -1,0 +1,37 @@
+---
+description: User story format — Gherkin only; include NFRs when applicable
+alwaysApply: true
+---
+
+# Story Format (Gherkin + NFRs)
+
+All user stories and acceptance criteria in this project **must** be written in **Gherkin format**.
+
+## Gherkin structure
+- Use `Feature`, `Scenario` (or `Scenario Outline`), `Given`, `When`, `Then` (and optionally `And`, `But`).
+- One feature per user story; scenarios are acceptance criteria.
+- Example:
+
+```gherkin
+Feature: [Short feature name]
+
+  As a [role]
+  I want [goal]
+  So that [benefit]
+
+  Scenario: [Scenario name]
+    Given [precondition]
+    When [action]
+    Then [observable outcome]
+```
+
+## When creating Jira stories
+- Put the Gherkin block in the story description or in the acceptance criteria field (as per your Jira setup).
+- Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
+
+## Non-functional requirements (NFRs)
+- **When applicable**, add NFRs explicitly. Do not force NFRs onto every story; add them where they matter (e.g. performance, security, accessibility, scale).
+- NFRs can be written as:
+  - Gherkin-style scenarios (e.g. `Scenario: Response time under load` with Given/When/Then), or
+  - Short, testable statements (e.g. "Page must meet WCAG 2.1 AA" or "P95 latency < 200ms").
+- Prefer one NFR section or scenario per concern so they are traceable.

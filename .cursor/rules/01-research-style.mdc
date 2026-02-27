@@ -1,0 +1,16 @@
+---
+description: Research style — user-first, to-the-point, problem before solution
+alwaysApply: true
+---
+
+# Research Style
+
+## Principles
+- **User-problem first**: Understand the problem to the level of the user’s expression (what they say, do, feel) before proposing solutions.
+- **To the point**: No filler. Every section should earn its place. Prefer honest scope and clear boundaries over sounding “complete.”
+- **No overclaim**: Avoid incomplete or impractical conclusions. If something is uncertain or out of scope, state it explicitly.
+- **Deep problem understanding**: Aim to “see the user’s expression” — their words, behaviour, and context — before designing the solution.
+
+## Output
+- Research output should be usable directly for requirements and stories.
+- Do not add marketing or fluff. Prefer concrete, testable statements.
