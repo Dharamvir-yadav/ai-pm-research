@@ -26,7 +26,7 @@ Feature: [Short feature name]
 ```
 
 ## When creating Jira stories
-- Put the Gherkin block in the story description or in the acceptance criteria field (as per your Jira setup).
+- Put the Gherkin block in the acceptance criteria (ATDD) field (as per Jira setup).
 - Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
 
 ## Non-functional requirements (NFRs)
