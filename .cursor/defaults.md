@@ -1,6 +1,8 @@
 # Project defaults
 
-Single place for Confluence, Jira, and other defaults. Agents and rules use this file when they need space keys, parent pages, project keys, etc.
+Add your Confluence and Jira links below. Agents use this file for space key, parent pages, and project key; they always ask for your confirmation before using them.
+
+See **How to add default Confluence and Jira links** in `.cursor/rules/03-jira-confluence-defaults.mdc` for where to find these values.
 
 ---
 
@@ -8,10 +10,7 @@ Single place for Confluence, Jira, and other defaults. Agents and rules use this
 
 | Key | Value | Notes |
 |-----|--------|--------|
-| Space key / ID | YOURSPACE | Confluence space for requirement pages. Replace with your space key or ID. |
-| Default parent page(s) | Requirements | Suggested parent for new requirement pages. Agent always asks for confirmation. |
-
-- **Default parent pages**: List one or more suggested parents (title or page ID). The **publish_confluence** agent suggests these and always seeks user confirmation before publishing.
+| Feature parent page | https://confluence.tc.lenovo.com/spaces/CGA/pages/919799978/IT+Assist+Features| Root to parent page |
 
 ---
 
@@ -19,12 +18,12 @@ Single place for Confluence, Jira, and other defaults. Agents and rules use this
 
 | Key | Value | Notes |
 |-----|--------|--------|
-| Project key | YOURPROJ | Jira project for stories/epics. Replace with your project key. |
-
-- Add other Jira defaults here as needed (e.g. default board, epic custom field).
+| UGAIN| https://jira.tc.lenovo.com/projects/GAI/issues| Project key |
 
 ---
 
 ## Other
 
-- Use this section for any other default pages or IDs (e.g. other tools, links).
+| Key | Value | Notes |
+|-----|--------|--------|
+| | | Add any other default links (e.g. board ID) |

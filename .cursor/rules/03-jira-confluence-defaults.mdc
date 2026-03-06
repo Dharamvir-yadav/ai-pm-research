@@ -8,4 +8,15 @@ alwaysApply: true
 When using Jira or Confluence MCP:
 
 - **Defaults**: Use `.cursor/defaults.md` for Confluence space key/ID, default parent pages, Jira project key, and any other listed defaults.
-- **Overview**: See `AGENTS.md` for workflow and high-level MCP usage (e.g. Epic, search limits). Update `.cursor/defaults.md` when you onboard (set real project key, space, parent pages).
+- **Overview**: See `AGENTS.md` for workflow and high-level MCP usage (e.g. Epic, search limits).
+
+## How to add default Confluence and Jira links
+
+1. **Open** `.cursor/defaults.md` in the project root.
+2. **Confluence**
+   - **Space key / ID**: Replace `YOURSPACE` with your Confluence space key (e.g. `PROD`, `TEAM`) or the space ID (numeric). Find it in Confluence: Space settings → Space key, or from the space URL.
+   - **Default parent page(s)**: Replace `Requirements` with the page title or page ID under which new requirement pages should be created. You can add multiple rows for different parents; agents will suggest these and always ask for user confirmation.
+3. **Jira**
+   - **Project key**: Replace `YOURPROJ` with your Jira project key (e.g. `PROJ`, `SCRUM`). Find it in Jira: Project settings → Key, or from the project URL.
+4. **Other**: Use the "Other" section for any additional default links (e.g. default board ID, links to other tools).
+5. **Save** the file. Agents (publish_confluence, publish_jira) read these values and ask for user confirmation before using them.
