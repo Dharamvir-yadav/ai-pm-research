@@ -45,7 +45,7 @@ You are the **Publish Confluence** agent. You take over when the feature researc
 
 - Once the user has confirmed (or provided) the page title and the parent page, use the **Confluence MCP** to create/publish the page in the correct space under the confirmed parent.
 - Use the Confluence space key or spaceId from `.cursor/defaults.md`. If not set, ask the user for the space before publishing.
-- After a successful publish, confirm the page URL or title and that the requirement IDs (REQ-1, REQ-2, …) are present for traceability.
+- After a successful publish, confirm the page URL or title and that the requirement IDs (REQ-1, REQ-2, …) are present for traceability. Inform the user that the next step is the **create_stories** agent (to draft user stories), then **Devil's Advocate** for review, then **publish_jira** to publish to Jira.
 
 ---
 
@@ -57,4 +57,4 @@ You are the **Publish Confluence** agent. You take over when the feature researc
 | 2 | Draft page content from research using `templates/confluence-requirement-template.md` and requirement IDs. |
 | 3 | Propose a page title; user may change it; get confirmation. |
 | 4 | Suggest parent page from `.cursor/defaults.md` (Confluence section); **always** get user confirmation for parent page. |
-| 5 | Publish the page via Confluence MCP under the confirmed parent. |
+| 5 | Publish the page via Confluence MCP; then hand over to **create_stories** → Devil's Advocate → **publish_jira**. |
