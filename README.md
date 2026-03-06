@@ -6,7 +6,7 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 
 - **Cursor** (IDE) with access to MCP.
 - **Atlassian Cloud** (Jira + Confluence). First time: authorize the Atlassian MCP (OAuth or API token) when Cursor prompts you.
-- Set your **Jira project key** and **Confluence space** in `AGENTS.md` (and optionally in `.cursor/rules/03-jira-confluence-defaults.mdc`). For each research run, provide or be asked for **Epic** and **Confluence page**.
+- Set your **Jira project key**, **Confluence space**, and default parent pages in `.cursor/defaults.md`. For each research run, provide or be asked for **Epic** and **Confluence page** as needed.
 
 ## Quick start
 
@@ -14,7 +14,7 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
    The project uses `.cursor/mcp.json` for the Atlassian MCP. If prompted, complete Atlassian OAuth (or API token).
 
 2. **Set your defaults**  
-   Edit `AGENTS.md`: replace `YOURPROJ` and `YOURSPACE` with your Jira project key and Confluence space. For each run, you will provide or be asked for **Epic** (Jira) and **Confluence page** (target page for requirements).
+   Edit `.cursor/defaults.md`: set Jira project key, Confluence space, and default parent page(s). For each run, you will provide or be asked for **Epic** (Jira) and **Confluence page** (target/parent) as needed.
 
 3. **Optional: add project context**  
    - Put a short “what this product is” / “what we’re doing” in `context/` or paste it in chat.  
@@ -37,7 +37,7 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 | Path | Purpose |
 |------|--------|
 | `.cursor/mcp.json` | Atlassian MCP (Confluence + Jira). Shareable; each user authorizes with their own Atlassian account. |
-| `.cursor/rules/` | Project and research rules, Confluence format, Jira/Confluence defaults, **story format (Gherkin + NFRs)**, **Devil's Advocate**, **story–requirement traceability**. |
+| `.cursor/rules/` | Project and research rules, Jira/Confluence defaults pointer, **story format (Gherkin + NFRs)**, **Devil's Advocate**, **story–requirement traceability**. |
 | `AGENTS.md` | Workflow steps, when to run Devil's Advocate and traceability, Atlassian defaults. |
 | `templates/confluence-requirement-template.md` | Confluence page structure. Replace with your team’s format. |
 | `context/` | Optional: project one-pager, screenshots (for theme/current UI only). |
@@ -64,4 +64,4 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 
 - Clone or share the repo. Everyone gets the same `.cursor/` and rules.  
 - Each teammate must complete Atlassian MCP auth (OAuth or API token) once in Cursor.  
-- Keep `AGENTS.md` and `03-jira-confluence-defaults.mdc` updated with the right Jira project and Confluence space for the team.
+- Keep `.cursor/defaults.md` updated with the right Jira project key, Confluence space, and default parent pages for the team.

@@ -24,4 +24,4 @@ What we are explicitly not doing for this feature.
 Non-functional requirements that apply to this feature (e.g. performance, accessibility, security). Reference in stories where applicable.
 
 ---
-*Replace this template with your team’s Confluence format. The agent will use the structure you define here.*
+*This file defines the Confluence requirement page format. The **publish_confluence** agent fills it from the signed-off research only and uses requirement IDs (REQ-1, REQ-2, …) for traceability. Replace the structure with your team’s format as needed.*

@@ -1,19 +1,19 @@
 {
-	"servers": {
-		"jira": {				
-			"url": "https://mcp.tc.lenovo.com/jira/mcp",				
-			"type": "http",
-			"headers": {
-				"X-Jira-Authorization": "Token ${env:MCP_JIRA_TOKEN}"				// Keep the 'Token'
-			}
-		},
- 		"confluence": {	
-			"url": "https://mcp.tc.lenovo.com/confluence/mcp",
-			"type": "http",
-			"headers": {
-				"X-Confluence-Authorization": "Token ${env:MCP_CONF_TOKEN}"				// Keep the 'Token'
-			}
-		}
-	},
-	"inputs": []
+  "mcpServers": {
+    "jira": {
+      "url": "https://mcp.tc.lenovo.com/jira/mcp",
+      "type": "http",
+      "headers": {
+        "X-Jira-Authorization": "Token ${env:MCP_JIRA_TOKEN}"
+      }
+    },
+    "confluence": {
+      "url": "https://mcp.tc.lenovo.com/confluence/mcp",
+      "type": "http",
+      "headers": {
+        "X-Confluence-Authorization": "Token ${env:MCP_CONF_TOKEN}"
+      }
+    }
+  },
+  "inputs": []
 }
