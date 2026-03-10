@@ -15,11 +15,14 @@ This project is used for **feature-level research and requirements** within a de
   2. **Data insights** — Questions about the user's IT fleet (analytics, reporting).
   3. **Actions** — Initiating actions from the chatbot (e.g. system scan, system update).
   4. **Agentic workflows** — Plan-and-execute agents (single or multi-flow); user manually triggers planning via a prompt today; the product is evolving toward more autonomous agents.
+  5. **Chatbot access** — The chatbot must be navigated to (e.g. from a dropdown); it is not integrated with all pages today. Integration across more pages is planned.
 - **Project brief**: See `AGENTS.md` or the user's message for "what we are doing" on a given initiative.
 - **Research topic**: The user provides 1–2 lines (or 2–3 lines) describing the feature or research question.
 - **Current UI**: Screenshots or images in `context/` or attached in chat show how the application looks today. Use them only for **theme, layout, and current behaviour**—do not infer requirements or features not stated in the research topic or requirements.
 
 ## Boundaries
-- Research must stay **within the product and user context** described above. Keep the **current solution** in mind when researching.
+- Research must stay **within the fleet management space (IT assets)** and align with **best practices**. Keep the **current solution** and **product and user context** above in mind when researching.
+- **Platform scope:** **Generative AI** and **agentic workflows** are already implemented; keep this in mind when defining future solutions. If a solution could be **simple automation** vs **AI**, say so explicitly—do not assume AI when automation might suffice.
+- **Enterprise application:** For this product, **cost & speed**, **security**, and **generic platform behavior** are extremely important; research and requirements should explicitly consider these where relevant.
 - Do not invent scope. If something is out of scope, say so and do not include it in requirements or stories.
 - When in doubt, prefer **narrower, explicit scope** over broad assumptions.

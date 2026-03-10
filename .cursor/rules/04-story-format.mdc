@@ -25,9 +25,25 @@ Feature: [Short feature name]
     Then [observable outcome]
 ```
 
-## When creating Jira stories
-- Put the Gherkin block in the acceptance criteria (ATDD) field (as per Jira setup).
-- Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
+## Where to put each story element (Jira)
+
+When creating or publishing stories in Jira, house the content as follows:
+
+| Story element | Jira field / section |
+|---------------|----------------------|
+| Story title / summary | **Summary** — prefix with feature short name in brackets (e.g. `[Caching] Short description`) |
+| Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
+| Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
+| Domain terms placeholder | **ATDD - Domain Terms** — use **"To do"** |
+| Additional info (if any) | **Description** |
+
+**Defaults when publishing to Jira:**
+- **Priority:** Major  
+- **Components:** UGAIN-PL  
+- **BST - Business Segment Target:** Commercial  
+- **Labels:** IQ-Platform, NotGroomed  
+
+Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
 
 ## Non-functional requirements (NFRs)
 - **When applicable**, add NFRs explicitly. Do not force NFRs onto every story; add them where they matter (e.g. performance, security, accessibility, scale).

@@ -20,3 +20,7 @@ When using Jira or Confluence MCP:
    - **Project key**: Replace `YOURPROJ` with your Jira project key (e.g. `PROJ`, `SCRUM`). Find it in Jira: Project settings → Key, or from the project URL.
 4. **Other**: Use the "Other" section for any additional default links (e.g. default board ID, links to other tools).
 5. **Save** the file. Agents (publish_confluence, publish_jira) read these values and ask for user confirmation before using them.
+
+## Secrets (tokens)
+
+Keep MCP API tokens out of the repo. Store them in `.cursor/.env` (e.g. `MCP_JIRA_TOKEN`, `MCP_CONF_TOKEN`). That file is gitignored and listed in `.cursorignore` so it is never committed or exposed to the agent. Export the same variables in your shell (e.g. in `~/.zshrc`) if Cursor does not load `.cursor/.env` when resolving MCP headers.
