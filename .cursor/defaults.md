@@ -22,6 +22,31 @@ See **How to add default Confluence and Jira links** in `.cursor/rules/03-jira-c
 
 ---
 
+## Jira Story Defaults
+
+When creating or publishing stories in Jira, house the content as follows:
+
+### Field mapping
+
+| Story element | Jira field / section |
+|---------------|----------------------|
+| Story title / summary | **Summary** — prefix with feature short name in brackets (e.g. `[Caching] Short description`) |
+| Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
+| Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
+| Domain terms placeholder | **ATDD - Domain Terms** — use **"To do"** |
+| Additional info (if any) | **Description** |
+
+### Default field values
+
+| Field | Default value |
+|-------|---------------|
+| **Priority** | Major |
+| **Components** | UGAIN-PL |
+| **BST - Business Segment Target** | Commercial |
+| **Labels** | IQ-Platform, NotGroomed |
+
+---
+
 ## Other
 
 | Key | Value | Notes |

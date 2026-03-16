@@ -25,24 +25,6 @@ Feature: [Short feature name]
     Then [observable outcome]
 ```
 
-## Where to put each story element (Jira)
-
-When creating or publishing stories in Jira, house the content as follows:
-
-| Story element | Jira field / section |
-|---------------|----------------------|
-| Story title / summary | **Summary** — prefix with feature short name in brackets (e.g. `[Caching] Short description`) |
-| Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
-| Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
-| Domain terms placeholder | **ATDD - Domain Terms** — use **"To do"** |
-| Additional info (if any) | **Description** |
-
-**Defaults when publishing to Jira:**
-- **Priority:** Major  
-- **Components:** UGAIN-PL  
-- **BST - Business Segment Target:** Commercial  
-- **Labels:** IQ-Platform, NotGroomed  
-
 Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
 
 ## Non-functional requirements (NFRs)
@@ -51,3 +33,6 @@ Each technical task or sub-task that has acceptance criteria should also use Ghe
   - Gherkin-style scenarios (e.g. `Scenario: Response time under load` with Given/When/Then), or
   - Short, testable statements (e.g. "Page must meet WCAG 2.1 AA" or "P95 latency < 200ms").
 - Prefer one NFR section or scenario per concern so they are traceable.
+
+## Jira field mapping & defaults
+When publishing stories to Jira, see `.cursor/defaults.md` (section "Jira Story Defaults") for field mapping and default values.
