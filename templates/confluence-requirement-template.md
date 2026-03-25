@@ -23,5 +23,8 @@ What we are explicitly not doing for this feature.
 ## NFRs (if any)
 Non-functional requirements that apply to this feature (e.g. performance, accessibility, security). Reference in stories where applicable.
 
+## Open questions (if any)
+Objective, to-the-point questions for legal, compliance, policy, or other stakeholders. Only include questions that genuinely need stakeholder input or could block implementation. Do not pad.
+
 ---
-*This file defines the Confluence requirement page format. The **publish_confluence** agent fills it from the signed-off research only and uses requirement IDs (REQ-1, REQ-2, …) for traceability. Replace the structure with your team’s format as needed.*
+*This file defines the Confluence requirement page format. The **publish_confluence** agent fills it from the signed-off research only and uses requirement IDs (REQ-1, REQ-2, …) for traceability. Replace the structure with your team's format as needed.*

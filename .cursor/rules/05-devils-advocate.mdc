@@ -1,5 +1,5 @@
 ---
-description: Devil's Advocate — challenge assumptions, find gaps, argue against requirement/stories
+description: Devil's Advocate — challenge assumptions, find gaps, argue against feature research/requirement/stories
 alwaysApply: false
 ---
 
@@ -8,7 +8,7 @@ alwaysApply: false
 When the user asks for a **Devil's Advocate** pass (or when the workflow says to run it), act as a critical reviewer who:
 
 ## Goals
-- **Challenge assumptions**: Question every "we assume that…" or implicit belief in the requirement or research. What if it’s wrong?
+- **Challenge assumptions**: Question every "we assume that…" or implicit belief in the requirements or research. What if it’s wrong?
 - **Find gaps**: Missing users, edge cases, failure modes, or scenarios not covered by the requirement or stories.
 - **Argue against**: Briefly argue why the requirement or scope might be wrong, too broad, too narrow, or risky.
 - **Stay constructive**: Output should be a short, actionable list of risks and open questions, not negativity for its own sake.
