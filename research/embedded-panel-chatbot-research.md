@@ -119,23 +119,23 @@ The panel chatbot supports **all capabilities** available in the full-page chatb
 
 | ID | Requirement |
 |----|-------------|
-| **REQ-1** | The platform SHALL display a persistent IT Assist button in the top navigation bar on every screen in Lenovo Device Orchestration. |
-| **REQ-2** | Clicking the top-nav button SHALL open a right-side panel chatbot that pushes the page content to the left. |
-| **REQ-3** | The panel SHALL close when the user clicks the close button or clicks the top-nav button again. The panel SHALL remain open when the user navigates to a different page. |
-| **REQ-4** | The panel SHALL show the user's most recent active thread when opened. Each user message SHALL display a per-message context label indicating which page it was sent from (e.g. "From: Device Management > Devices"). |
-| **REQ-5** | The panel header SHALL include a "+" button that closes the current thread and starts a new one (maintaining existing new-thread behaviour from full-screen LITA). |
-| **REQ-6** | The panel header SHALL include a link/icon to open the full-page LITA view, navigating to the currently active thread. |
-| ~~**REQ-7**~~ | ~~Thread list in panel~~ — Moved to Phase 2. |
-| ~~**REQ-8**~~ | ~~Thread management in full-page only~~ — Moved to Phase 2. |
-| ~~**REQ-9**~~ | ~~Page-specific prompts~~ — Removed (covered in Phase 2). |
-| ~~**REQ-10**~~ | ~~Configurable prompt mapping~~ — Removed (covered in Phase 2). |
-| ~~**REQ-11**~~ | ~~Fallback to global prompts~~ — Removed (covered in Phase 2). |
-| **REQ-12** | The panel chatbot SHALL support all capabilities available in the full-page chatbot: KB Q&A, Data insights, Actions, Reasoning toggle, Smart suggestions, Response feedback, Explore/Favourite prompts, In-progress state with stop/cancel. |
-| **REQ-13** | Rich content (charts, data tables, images) SHALL render correctly within the panel's width, with responsive adaptations as needed (e.g. horizontal scroll, aspect ratio adjustment). |
-| **REQ-14** | The panel and chat engine SHALL be lazy-loaded — only initialised when the user first opens the panel. |
-| **REQ-15** | The full-page Lenovo IT Assist page SHALL remain accessible via the platform dropdown navigation and via the panel's "open full view" link. |
-| **REQ-16** | When the user is already on the full-page LITA, the top-nav panel button SHALL be hidden or disabled to avoid redundancy. |
-| **REQ-17** | On first use (first time the panel button appears for a user), the system SHALL display a one-time onboarding cue (e.g. tooltip, callout, or pulse animation on the button) to inform the user that AI assistance is available from any page. The cue SHALL be dismissible and not shown again after dismissal or first panel open. |
+| **REQ-PANEL-01** | The platform SHALL display a persistent IT Assist button in the top navigation bar on every screen in Lenovo Device Orchestration. |
+| **REQ-PANEL-02** | Clicking the top-nav button SHALL open a right-side panel chatbot that pushes the page content to the left. |
+| **REQ-PANEL-03** | The panel SHALL close when the user clicks the close button or clicks the top-nav button again. The panel SHALL remain open when the user navigates to a different page. |
+| **REQ-PANEL-04** | The panel SHALL show the user's most recent active thread when opened. Each user message SHALL display a per-message context label indicating which page it was sent from (e.g. "From: Device Management > Devices"). |
+| **REQ-PANEL-05** | The panel header SHALL include a "+" button that closes the current thread and starts a new one (maintaining existing new-thread behaviour from full-screen LITA). |
+| **REQ-PANEL-06** | The panel header SHALL include a link/icon to open the full-page LITA view, navigating to the currently active thread. |
+| ~~**REQ-PANEL-07**~~ | ~~Thread list in panel~~ — Moved to Phase 2. |
+| ~~**REQ-PANEL-08**~~ | ~~Thread management in full-page only~~ — Moved to Phase 2. |
+| ~~**REQ-PANEL-09**~~ | ~~Page-specific prompts~~ — Removed (covered in Phase 2). |
+| ~~**REQ-PANEL-10**~~ | ~~Configurable prompt mapping~~ — Removed (covered in Phase 2). |
+| ~~**REQ-PANEL-11**~~ | ~~Fallback to global prompts~~ — Removed (covered in Phase 2). |
+| **REQ-PANEL-12** | The panel chatbot SHALL support all capabilities available in the full-page chatbot: KB Q&A, Data insights, Actions, Reasoning toggle, Smart suggestions, Response feedback, Explore/Favourite prompts, In-progress state with stop/cancel. |
+| **REQ-PANEL-13** | Rich content (charts, data tables, images) SHALL render correctly within the panel's width, with responsive adaptations as needed (e.g. horizontal scroll, aspect ratio adjustment). |
+| **REQ-PANEL-14** | The panel and chat engine SHALL be lazy-loaded — only initialised when the user first opens the panel. |
+| **REQ-PANEL-15** | The full-page Lenovo IT Assist page SHALL remain accessible via the platform dropdown navigation and via the panel's "open full view" link. |
+| **REQ-PANEL-16** | When the user is already on the full-page LITA, the top-nav panel button SHALL be hidden or disabled to avoid redundancy. |
+| **REQ-PANEL-17** | On first use (first time the panel button appears for a user), the system SHALL display a one-time onboarding cue (e.g. tooltip, callout, or pulse animation on the button) to inform the user that AI assistance is available from any page. The cue SHALL be dismissible and not shown again after dismissal or first panel open. |
 
 ---
 

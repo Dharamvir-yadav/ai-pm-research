@@ -192,22 +192,22 @@ Entity extraction may already exist or can be lightweight (keywords, regex for c
 
 ---
 
-## 8. Requirements (REQ-1, REQ-2, …)
+## 8. Requirements (REQ-THREAD-01, REQ-THREAD-02, …)
 
 | ID | Requirement |
 |----|--------------|
-| **REQ-1** | The system SHALL automatically generate a thread title after the first AI response in a new session. |
-| **REQ-2** | The system SHALL use a hybrid naming strategy: template-based (intent + entity extraction) as primary, with LLM summarisation as fallback when the template would produce a weak or generic title. |
-| **REQ-3** | The system SHALL fall back to "Chat – {date}" or equivalent when the first prompt is too short/vague, or when title generation fails. |
-| **REQ-4** | The system SHALL sanitise PII (e.g. device IDs, usernames) from thread names before storage and display. |
-| **REQ-5** | The system SHALL NOT auto-rename a thread after the user has manually renamed it. |
-| **REQ-6** | Thread titles SHALL be limited to 50–60 characters. |
-| **REQ-7** | Thread titles SHALL be searchable in session history. |
-| **REQ-8** | Thread titles SHALL be stored and logged for auditability (with PII redacted). |
-| **REQ-9** | The user SHALL be able to manually rename a thread at any time. |
-| **REQ-10** | When the first AI response is not yet available, the session SHALL display a placeholder (e.g. "New conversation") until the title is generated. |
-| **REQ-11** | Title generation SHALL run asynchronously so it does not block or delay the user-facing response. |
-| **REQ-12** | Thread titles SHALL be generated in the language of the user's prompt when the product supports that locale. |
+| **REQ-THREAD-01** | The system SHALL automatically generate a thread title after the first AI response in a new session. |
+| **REQ-THREAD-02** | The system SHALL use a hybrid naming strategy: template-based (intent + entity extraction) as primary, with LLM summarisation as fallback when the template would produce a weak or generic title. |
+| **REQ-THREAD-03** | The system SHALL fall back to "Chat – {date}" or equivalent when the first prompt is too short/vague, or when title generation fails. |
+| **REQ-THREAD-04** | The system SHALL sanitise PII (e.g. device IDs, usernames) from thread names before storage and display. |
+| **REQ-THREAD-05** | The system SHALL NOT auto-rename a thread after the user has manually renamed it. |
+| **REQ-THREAD-06** | Thread titles SHALL be limited to 50–60 characters. |
+| **REQ-THREAD-07** | Thread titles SHALL be searchable in session history. |
+| **REQ-THREAD-08** | Thread titles SHALL be stored and logged for auditability (with PII redacted). |
+| **REQ-THREAD-09** | The user SHALL be able to manually rename a thread at any time. |
+| **REQ-THREAD-10** | When the first AI response is not yet available, the session SHALL display a placeholder (e.g. "New conversation") until the title is generated. |
+| **REQ-THREAD-11** | Title generation SHALL run asynchronously so it does not block or delay the user-facing response. |
+| **REQ-THREAD-12** | Thread titles SHALL be generated in the language of the user's prompt when the product supports that locale. |
 
 ### Out of scope (v1)
 

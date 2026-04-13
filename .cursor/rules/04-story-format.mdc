@@ -10,7 +10,9 @@ All user stories and acceptance criteria in this project **must** be written in 
 ## Gherkin structure
 - Use `Feature`, `Scenario` (or `Scenario Outline`), `Given`, `When`, `Then` (and optionally `And`, `But`).
 - One feature per user story; scenarios are acceptance criteria.
-- Example:
+- **Example:** Use **normal Gherkin narrative** for the feature and user story lines; use the **table** only for each **Scenario** (acceptance criterion).
+
+**Feature and narrative (normal text, not a table):**
 
 ```gherkin
 Feature: [Short feature name]
@@ -18,17 +20,23 @@ Feature: [Short feature name]
   As a [role]
   I want [goal]
   So that [benefit]
-
-  Scenario: [Scenario name]
-    Given [precondition]
-    When [action]
-    Then [observable outcome]
 ```
+
+**Each acceptance criterion (scenario)—tabular steps**
+
+| # | Keyword | Content |
+|---|---------|---------|
+| 1 | `Scenario:` | [Scenario name] |
+| 2 | `Given` | [precondition] |
+| 3 | `When` | [action] |
+| 4 | `Then` | [observable outcome] |
+
+*(Repeat the scenario table for each acceptance criterion; use `And` / `But` as extra rows with the same keyword column when needed.)*
 
 Each technical task or sub-task that has acceptance criteria should also use Gherkin if applicable.
 
 ## Non-functional requirements (NFRs)
-- **When applicable**, add NFRs explicitly. Do not force NFRs onto every story; add them where they matter (e.g. performance, security, accessibility, scale).
+- **Only When applicable**, add NFRs explicitly. Do not force NFRs onto every story; add them where they matter (e.g. performance, security, accessibility, scale).
 - NFRs can be written as:
   - Gherkin-style scenarios (e.g. `Scenario: Response time under load` with Given/When/Then), or
   - Short, testable statements (e.g. "Page must meet WCAG 2.1 AA" or "P95 latency < 200ms").

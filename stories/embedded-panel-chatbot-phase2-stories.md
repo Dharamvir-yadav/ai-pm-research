@@ -1,7 +1,7 @@
 # User Stories: Embedded Panel Chatbot — Phase 2: Context-Aware AI & "Ask IQ"
 
 **Source:** Confluence page "Embedded Panel Chatbot — Phase 2: Context-Aware AI & Ask IQ Requirements" (pageId=1372621889)
-**Requirements:** REQ-18 through REQ-31, NFR-7
+**Requirements:** REQ-PANEL-18 through REQ-PANEL-31, NFR-7
 **Feature:** Context-Aware AI & "Ask IQ"
 **Dependency:** Phase 1 stories (Stories 1–10) must be implemented first.
 
@@ -20,7 +20,7 @@
 
 ## Story 11: "Ask IQ" popup trigger on data tables
 
-**Maps to:** REQ-18, REQ-31, NFR-7
+**Maps to:** REQ-PANEL-18, REQ-PANEL-31, NFR-7
 
 As an IT Admin viewing a data table
 I want an "Ask IQ" popup to appear when I select multiple rows
@@ -38,7 +38,7 @@ So that I can quickly ask AI questions about my selection without typing a promp
 
 ## Story 12: "Ask IQ" smart suggestions and popup content
 
-**Maps to:** REQ-19, REQ-28, REQ-29
+**Maps to:** REQ-PANEL-19, REQ-PANEL-28, REQ-PANEL-29
 
 As an IT Admin
 I want the "Ask IQ" popup to show relevant suggestions based on what I've selected
@@ -54,7 +54,7 @@ So that I can act on my selection with one click instead of formulating a prompt
 
 ## Story 13: Clicking a suggestion fires into the panel
 
-**Maps to:** REQ-20, REQ-22
+**Maps to:** REQ-PANEL-20, REQ-PANEL-22
 
 As an IT Admin
 I want to click a suggestion and have it immediately sent to the chatbot with my selection as context
@@ -72,7 +72,7 @@ So that I get a contextual answer in one click
 
 ## Story 14: "Something else" opens the panel with context
 
-**Maps to:** REQ-21
+**Maps to:** REQ-PANEL-21
 
 As an IT Admin
 I want to click "Something else" and type my own question with my selection automatically attached
@@ -89,7 +89,7 @@ So that I can ask any question about my selection without re-entering what I've 
 
 ## Story 15: "Ask IQ" on dashboard widgets
 
-**Maps to:** REQ-23
+**Maps to:** REQ-PANEL-23
 
 As an IT Admin viewing the Dashboard
 I want each widget to have an AI icon I can click for contextual suggestions
@@ -106,7 +106,7 @@ So that I can ask questions about specific dashboard data without formulating a 
 
 ## Story 16: Context chip lifecycle
 
-**Maps to:** REQ-24, REQ-25, REQ-26
+**Maps to:** REQ-PANEL-24, REQ-PANEL-25, REQ-PANEL-26
 
 As an IT Admin
 I want to see what context is attached to my next message and control whether to include it
@@ -126,7 +126,7 @@ So that I have transparency over what the AI will use and can opt out if I want 
 
 ## Story 17: Per-message context attachment display
 
-**Maps to:** REQ-27
+**Maps to:** REQ-PANEL-27
 
 As an IT Admin
 I want to see what context was attached to each message in the chat history
@@ -143,7 +143,7 @@ So that I understand which data the AI used when answering
 
 ## Story 18: Thread list in panel (moved from Phase 1) — GAI-7381
 
-**Maps to:** REQ-7, REQ-8
+**Maps to:** REQ-PANEL-07, REQ-PANEL-08
 
 As an IT Admin
 I want to view and switch between my recent threads from within the panel
@@ -160,7 +160,7 @@ So that I can resume past conversations without navigating to the full-page chat
 
 ## Story 20: Page-specific pre-canned prompts on home screen (moved from Phase 1) — GAI-7445
 
-**Maps to:** REQ-9, REQ-10, REQ-11
+**Maps to:** REQ-PANEL-09, REQ-PANEL-10, REQ-PANEL-11
 
 As an IT Admin
 I want to see relevant suggested prompts based on which page I'm on
@@ -188,27 +188,27 @@ So that I can quickly ask relevant questions without having to formulate them my
 
 | Requirement | Story(ies) | Notes |
 |-------------|------------|-------|
-| REQ-7 | Story 18 | Moved from Phase 1 |
-| REQ-8 | Story 18 | Moved from Phase 1 |
-| REQ-9 | Story 20 | Moved from Phase 1 |
-| REQ-10 | Story 20 | Moved from Phase 1 |
-| REQ-11 | Story 20 | Moved from Phase 1 |
-| REQ-18 | Story 11 | |
-| REQ-19 | Story 12 | |
-| REQ-20 | Story 13 | |
-| REQ-21 | Story 14 | |
-| REQ-22 | Story 13 | |
-| REQ-23 | Story 15 | |
-| REQ-24 | Story 16 | |
-| REQ-25 | Story 16 | |
-| REQ-26 | Story 16 | |
-| REQ-27 | Story 17 | |
-| REQ-28 | Story 12 | |
-| REQ-29 | Story 12 | |
-| REQ-30 | N/A — existing infrastructure | |
-| REQ-31 | Story 11 | |
+| REQ-PANEL-07 | Story 18 | Moved from Phase 1 |
+| REQ-PANEL-08 | Story 18 | Moved from Phase 1 |
+| REQ-PANEL-09 | Story 20 | Moved from Phase 1 |
+| REQ-PANEL-10 | Story 20 | Moved from Phase 1 |
+| REQ-PANEL-11 | Story 20 | Moved from Phase 1 |
+| REQ-PANEL-18 | Story 11 | |
+| REQ-PANEL-19 | Story 12 | |
+| REQ-PANEL-20 | Story 13 | |
+| REQ-PANEL-21 | Story 14 | |
+| REQ-PANEL-22 | Story 13 | |
+| REQ-PANEL-23 | Story 15 | |
+| REQ-PANEL-24 | Story 16 | |
+| REQ-PANEL-25 | Story 16 | |
+| REQ-PANEL-26 | Story 16 | |
+| REQ-PANEL-27 | Story 17 | |
+| REQ-PANEL-28 | Story 12 | |
+| REQ-PANEL-29 | Story 12 | |
+| REQ-PANEL-30 | N/A — existing infrastructure | |
+| REQ-PANEL-31 | Story 11 | |
 
-- **Every functional requirement has at least one story:** Yes (REQ-30 covered by existing infrastructure).
+- **Every functional requirement has at least one story:** Yes (REQ-PANEL-30 covered by existing infrastructure).
 - **Every story has at least one requirement:** Yes.
 
 ---
@@ -221,7 +221,7 @@ So that I can quickly ask relevant questions without having to formulate them my
 | Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
 | Acceptance criteria (table) | **ATDD - Acceptance Criteria** |
 | Domain terms | **ATDD - Domain Terms** — use **"To do"** |
-| Maps to REQ-x | **Description** |
+| Maps to requirement ID | **Description** |
 
 ---
 

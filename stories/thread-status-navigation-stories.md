@@ -8,7 +8,7 @@
 
 ### Story 1: [Thread Nav Status] Display Generating status on thread chips
 
-**Maps to:** REQ-1, REQ-3, REQ-4, REQ-5
+**Maps to:** REQ-TSN-01, REQ-TSN-03, REQ-TSN-04, REQ-TSN-05
 
 ```gherkin
 Feature: Thread chip Generating status indicator
@@ -51,7 +51,7 @@ Feature: Thread chip Generating status indicator
 
 ### Story 2: [Thread Nav Status] Display Error status on thread chips
 
-**Maps to:** REQ-2, REQ-8
+**Maps to:** REQ-TSN-02, REQ-TSN-08
 
 ```gherkin
 Feature: Thread chip Error status indicator
@@ -80,7 +80,7 @@ Feature: Thread chip Error status indicator
 
 ### Story 3: [Thread Nav Status] Clear status when user stops generation
 
-**Maps to:** REQ-6
+**Maps to:** REQ-TSN-06
 
 ```gherkin
 Feature: Thread chip status clears on user stop
@@ -100,7 +100,7 @@ Feature: Thread chip status clears on user stop
 
 ### Story 4: [Thread Nav Status] Defer Generating indicator for fast responses
 
-**Maps to:** REQ-7
+**Maps to:** REQ-TSN-07
 
 ```gherkin
 Feature: No flash for fast responses
@@ -130,7 +130,7 @@ Feature: No flash for fast responses
 
 ### Story 5: [Thread Nav Status] Backend exposes thread-level generation state
 
-**Maps to:** REQ-9, REQ-12
+**Maps to:** REQ-TSN-09, REQ-TSN-12
 
 ```gherkin
 Feature: Backend thread generation state
@@ -157,7 +157,7 @@ Feature: Backend thread generation state
 
 ### Story 6: [Thread Nav Status] Restore status on panel reopen or page refresh
 
-**Maps to:** REQ-10
+**Maps to:** REQ-TSN-10
 
 ```gherkin
 Feature: Status restored from backend on reopen or refresh
@@ -183,7 +183,7 @@ Feature: Status restored from backend on reopen or refresh
 
 ### Story 7: [Thread Nav Status] Cancel generation from thread chip in sidebar
 
-**Maps to:** REQ-11
+**Maps to:** REQ-TSN-11
 
 ```gherkin
 Feature: Cancel generation from thread chip
@@ -207,7 +207,7 @@ Feature: Cancel generation from thread chip
 
 ### Story 8: [Thread Nav Status] Completion notification when response finishes in background thread
 
-**Maps to:** REQ-13
+**Maps to:** REQ-TSN-13
 
 ```gherkin
 Feature: Completion notification for background threads
@@ -238,19 +238,19 @@ Feature: Completion notification for background threads
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 2 |
-| REQ-3 | Story 1 |
-| REQ-4 | Story 1 |
-| REQ-5 | Story 1 |
-| REQ-6 | Story 3 |
-| REQ-7 | Story 4 |
-| REQ-8 | Story 2 |
-| REQ-9 | Story 5 |
-| REQ-10 | Story 6 |
-| REQ-11 | Story 7 |
-| REQ-12 | Story 5 |
-| REQ-13 | Story 8 |
+| REQ-TSN-01 | Story 1 |
+| REQ-TSN-02 | Story 2 |
+| REQ-TSN-03 | Story 1 |
+| REQ-TSN-04 | Story 1 |
+| REQ-TSN-05 | Story 1 |
+| REQ-TSN-06 | Story 3 |
+| REQ-TSN-07 | Story 4 |
+| REQ-TSN-08 | Story 2 |
+| REQ-TSN-09 | Story 5 |
+| REQ-TSN-10 | Story 6 |
+| REQ-TSN-11 | Story 7 |
+| REQ-TSN-12 | Story 5 |
+| REQ-TSN-13 | Story 8 |
 
 | NFR | Story(ies) |
 |-----|------------|
@@ -259,4 +259,4 @@ Feature: Completion notification for background threads
 | NFR-3 | Story 1, Story 2, Story 4 |
 | NFR-4 | Story 5 |
 
-**Validation:** ✓ Every requirement (REQ-1 through REQ-13) is covered by at least one story. ✓ Every story maps to at least one requirement. ✓ Every NFR (NFR-1 through NFR-4) is covered. ✓ No gaps.
+**Validation:** ✓ Every requirement (REQ-TSN-01 through REQ-TSN-13) is covered by at least one story. ✓ Every story maps to at least one requirement. ✓ Every NFR (NFR-1 through NFR-4) is covered. ✓ No gaps.

@@ -1,0 +1,45 @@
+---
+description: Research scope, boundaries, SSOT pointers, and competitive landscape policy for AI PM workflow
+alwaysApply: true
+---
+
+# Research Scope & Boundaries
+
+## Repository charter (customize for your product)
+
+**Forking or reusing this repo:** Replace **`context/product-definition.md`** and **`context/industry-context.md`**. Do **not** duplicate domain, personas, competitors, or industry norms in this rule—they belong only in **`context/industry-context.md`**.
+
+**Market & domain SSOT:** `context/industry-context.md` — vertical, industry snapshot, norms, personas & JTBD examples, enterprise customer archetypes, **SMB research toggle**, and **key competitor** lists.
+
+---
+
+## Purpose
+This **repository** is used for **feature-level research and requirements** within a defined product scope. Work must stay inside the **boundaries** defined in this file and stay aligned with the **documented current product** in the **product SSOT** (see **What You Must Know** below)—not with invented capabilities.
+
+## What You Must Know
+- **Product SSOT (capabilities):** `context/product-definition.md` — product name, platform, **current features only**.
+- **Industry / market SSOT:** `context/industry-context.md` — domain, personas & JTBD, industry norms, competitors, customer archetypes, SMB research flag.
+- **Read both files before** researching or defining requirements. Do **not** use this rule file as a substitute for either document.
+
+## Inputs & References
+- **Initiative intent (“what we are doing”)**: Use the **user's message** in this chat and any notes in `context/`. See **`AGENTS.md`** for the **end-to-end workflow**, MCP usage, and pointers to defaults—not as the feature brief itself.
+- **Precedence**: If the user's message in this chat conflicts with text in `AGENTS.md`, follow the user for initiative-specific intent.
+- **Research topic**: The user provides 1–2 lines (or 2–3 lines) describing the feature or research question.
+- **Current UI**: Screenshots in `base-features-screenshots/` show how the application looks today. Use them only for **theme, layout, and current behaviour** — do not infer requirements or features not stated in the research topic or requirements.
+
+## Competitive Landscape
+- Use **key competitors and default comparables** in **`context/industry-context.md`** as the **starting set**—not a closed universe. Add other products when relevant; label additions **outside the standard set** when they are not listed there.
+- Honor **Consider SMB / mid-market comparables for inspiration** in that file: if **no**, do **not** use SME comparables for inspiration—**enterprise** comparables only. If **yes**, SME comparables may inform **ideas and UX** only, labeled **non-enterprise / inspiration**, not like-for-like enterprise comparables.
+- **Primary** like-for-like comparables: **enterprise** products from industry context. Consumer-only products (e.g. ChatGPT consumer) may be referenced for AI/UX patterns but are not direct competitors.
+
+## Complaince
+- Ensure you feature considers inputs from NIST-AIRMF, EU AI Act and AI rules applied by US Federal agencies. Recommend if these frameworks explicity demand any compliance requirement to be met in context of feature
+- Keep the independent compliance section,
+- Summarize cross-cutting themes in 2–4 bullets; full article-by-article treatment only when the user or initiative explicitly requires legal-grade depth.
+- If a section of these framework like NIST-AIRMF or EU Act directly impacts, provide the specific section summary as is or a link to it. 
+
+## Boundaries
+- Stay within **domain** and **industry norms** defined in **`context/industry-context.md`**.
+- **Platform scope:** **Generative AI** and **agentic workflows** are already implemented; keep this in mind when defining future solutions. If a solution could be **simple automation** vs **AI**, say so explicitly— **do not assume** AI when automation might suffice.
+- Do not invent scope. If something is out of scope, say so and do not include it in requirements or stories.
+- When in doubt, prefer **narrower, explicit scope** over broad assumptions. Ask follow-up questions in case of ambiguity in user response.

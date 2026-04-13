@@ -1,7 +1,7 @@
 # User Stories: Auto-Rename Chat Threads
 
 **Source:** Confluence page "Auto-Rename Chat Threads" (pageId=1367510517)  
-**Requirements:** REQ-1 through REQ-12  
+**Requirements:** REQ-THREAD-01 through REQ-THREAD-12  
 **Feature:** Auto-Rename Chat Threads
 
 ---
@@ -17,7 +17,7 @@
 
 ## Story 1: Auto-generate thread title after first AI response
 
-**Maps to:** REQ-1, REQ-2, REQ-3
+**Maps to:** REQ-THREAD-01, REQ-THREAD-02, REQ-THREAD-03
 
 ```gherkin
 Feature: Automatic thread title generation
@@ -61,7 +61,7 @@ Feature: Automatic thread title generation
 
 ## Story 2: PII sanitisation in thread titles
 
-**Maps to:** REQ-4
+**Maps to:** REQ-THREAD-04
 
 ```gherkin
 Feature: PII sanitised from thread titles
@@ -93,7 +93,7 @@ Feature: PII sanitised from thread titles
 
 ## Story 3: Manual rename and respect user preference
 
-**Maps to:** REQ-5, REQ-9
+**Maps to:** REQ-THREAD-05, REQ-THREAD-09
 
 ```gherkin
 Feature: Manual rename and no auto-rename override
@@ -125,7 +125,7 @@ Feature: Manual rename and no auto-rename override
 
 ## Story 4: Thread title length constraints
 
-**Maps to:** REQ-6
+**Maps to:** REQ-THREAD-06
 
 ```gherkin
 Feature: Thread title length constraints
@@ -156,7 +156,7 @@ Feature: Thread title length constraints
 
 ## Story 5: Thread titles searchable and stored for audit
 
-**Maps to:** REQ-7, REQ-8
+**Maps to:** REQ-THREAD-07, REQ-THREAD-08
 
 ```gherkin
 Feature: Thread titles searchable and auditable
@@ -188,7 +188,7 @@ Feature: Thread titles searchable and auditable
 
 ## Story 6: Placeholder label and async title generation
 
-**Maps to:** REQ-10, REQ-11
+**Maps to:** REQ-THREAD-10, REQ-THREAD-11
 
 ```gherkin
 Feature: Placeholder label and non-blocking title generation
@@ -222,7 +222,7 @@ Feature: Placeholder label and non-blocking title generation
 
 ## Story 7: Thread title localisation
 
-**Maps to:** REQ-12
+**Maps to:** REQ-THREAD-12
 
 ```gherkin
 Feature: Thread titles in user prompt language
@@ -297,18 +297,18 @@ Feature: Thread titles accessible to screen readers
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 1 |
-| REQ-3 | Story 1 |
-| REQ-4 | Story 2 |
-| REQ-5 | Story 3 |
-| REQ-6 | Story 4 |
-| REQ-7 | Story 5 |
-| REQ-8 | Story 5 |
-| REQ-9 | Story 3 |
-| REQ-10 | Story 6 |
-| REQ-11 | Story 6 |
-| REQ-12 | Story 7 |
+| REQ-THREAD-01 | Story 1 |
+| REQ-THREAD-02 | Story 1 |
+| REQ-THREAD-03 | Story 1 |
+| REQ-THREAD-04 | Story 2 |
+| REQ-THREAD-05 | Story 3 |
+| REQ-THREAD-06 | Story 4 |
+| REQ-THREAD-07 | Story 5 |
+| REQ-THREAD-08 | Story 5 |
+| REQ-THREAD-09 | Story 3 |
+| REQ-THREAD-10 | Story 6 |
+| REQ-THREAD-11 | Story 6 |
+| REQ-THREAD-12 | Story 7 |
 
 - **Every requirement has at least one story:** Yes.
 - **Every story has at least one requirement:** Yes.
@@ -323,7 +323,7 @@ Feature: Thread titles accessible to screen readers
 | Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
 | Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
 | Domain terms | **ATDD - Domain Terms** — use **"To do"** |
-| Maps to REQ-x | **Description** |
+| Maps to requirement ID | **Description** |
 
 ---
 

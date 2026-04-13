@@ -212,30 +212,30 @@ The existing prompt store is used. Matching logic:
 
 | ID | Requirement |
 |----|-------------|
-| **REQ-18** | When the user selects more than 1 row on a supported data table, the system SHALL display an "Ask IQ" floating popup near the right edge of the viewport. |
-| **REQ-19** | The "Ask IQ" popup SHALL show up to 3 smart suggestions from the prompt store (matched by page definition and entity type) plus an always-present "Something else" option. |
-| **REQ-20** | Clicking a suggestion in the "Ask IQ" popup SHALL open the side panel (if closed) and fire the suggestion into the existing active thread with the selected entity IDs attached as context. |
-| **REQ-21** | Clicking "Something else" SHALL open the side panel (if closed), focus the input bar, and display a context chip showing the attached context (e.g. "3 devices selected"). The chip SHALL be dismissible. |
-| **REQ-22** | If the panel is processing a response, "Ask IQ" popup suggestions SHALL be disabled with a hover tooltip: "You can trigger once current response is fully generated." |
-| **REQ-23** | Each dashboard widget SHALL display a LITA icon. Clicking the icon SHALL open an "Ask IQ" popup with up to 3 smart suggestions (matched by widget type and widget data) plus "Something else". |
-| **REQ-24** | The context chip SHALL appear in or near the input area when context is attached. It SHALL display the context summary (e.g. "3 devices selected" or "Device Connectivity widget") and be dismissible. |
-| **REQ-25** | The context chip SHALL clear when: the user sends a message, dismisses the chip, navigates to another page, or deselects the rows/widget. When the selection changes (rows added or removed), the chip SHALL update to reflect the new selection. |
-| **REQ-26** | Messages sent with context SHALL include the entity IDs (or widget data) in the payload sent to the model. For selections exceeding 20 entities, all entity IDs are still passed; the context chip displays "20+" for readability. The model resolves full entity data via its existing schema and GQL generation capability. |
-| **REQ-27** | Messages sent with context SHALL display a context attachment indicator in the chat (e.g. "With: 3 devices (AHELSINGER, GYSCLUMY, JQARTSSR)") as a collapsible detail below the message. |
-| **REQ-28** | The prompt store SHALL support tagging prompts by entity type (device, package, app, patch) and widget type (Device Connectivity, System Update, etc.) for "Ask IQ" suggestion matching. |
-| **REQ-29** | If no matching prompts are found in the store for a given context, the "Ask IQ" popup SHALL show only "Something else" (no suggestion slots). |
-| **REQ-30** | Context injection SHALL respect user access controls — only data visible to the user is included. Context payloads SHALL be scoped to the current tenant and not persisted beyond the thread lifecycle. |
-| **REQ-31** | The "Ask IQ" popup SHALL be dismissible by clicking outside it or deselecting rows/widget. |
+| **REQ-PANEL-18** | When the user selects more than 1 row on a supported data table, the system SHALL display an "Ask IQ" floating popup near the right edge of the viewport. |
+| **REQ-PANEL-19** | The "Ask IQ" popup SHALL show up to 3 smart suggestions from the prompt store (matched by page definition and entity type) plus an always-present "Something else" option. |
+| **REQ-PANEL-20** | Clicking a suggestion in the "Ask IQ" popup SHALL open the side panel (if closed) and fire the suggestion into the existing active thread with the selected entity IDs attached as context. |
+| **REQ-PANEL-21** | Clicking "Something else" SHALL open the side panel (if closed), focus the input bar, and display a context chip showing the attached context (e.g. "3 devices selected"). The chip SHALL be dismissible. |
+| **REQ-PANEL-22** | If the panel is processing a response, "Ask IQ" popup suggestions SHALL be disabled with a hover tooltip: "You can trigger once current response is fully generated." |
+| **REQ-PANEL-23** | Each dashboard widget SHALL display a LITA icon. Clicking the icon SHALL open an "Ask IQ" popup with up to 3 smart suggestions (matched by widget type and widget data) plus "Something else". |
+| **REQ-PANEL-24** | The context chip SHALL appear in or near the input area when context is attached. It SHALL display the context summary (e.g. "3 devices selected" or "Device Connectivity widget") and be dismissible. |
+| **REQ-PANEL-25** | The context chip SHALL clear when: the user sends a message, dismisses the chip, navigates to another page, or deselects the rows/widget. When the selection changes (rows added or removed), the chip SHALL update to reflect the new selection. |
+| **REQ-PANEL-26** | Messages sent with context SHALL include the entity IDs (or widget data) in the payload sent to the model. For selections exceeding 20 entities, all entity IDs are still passed; the context chip displays "20+" for readability. The model resolves full entity data via its existing schema and GQL generation capability. |
+| **REQ-PANEL-27** | Messages sent with context SHALL display a context attachment indicator in the chat (e.g. "With: 3 devices (AHELSINGER, GYSCLUMY, JQARTSSR)") as a collapsible detail below the message. |
+| **REQ-PANEL-28** | The prompt store SHALL support tagging prompts by entity type (device, package, app, patch) and widget type (Device Connectivity, System Update, etc.) for "Ask IQ" suggestion matching. |
+| **REQ-PANEL-29** | If no matching prompts are found in the store for a given context, the "Ask IQ" popup SHALL show only "Something else" (no suggestion slots). |
+| **REQ-PANEL-30** | Context injection SHALL respect user access controls — only data visible to the user is included. Context payloads SHALL be scoped to the current tenant and not persisted beyond the thread lifecycle. |
+| **REQ-PANEL-31** | The "Ask IQ" popup SHALL be dismissible by clicking outside it or deselecting rows/widget. |
 
 ### Requirements moved from Phase 1
 
 | ID | Requirement | Origin |
 |----|-------------|--------|
-| **REQ-7** | The panel SHALL include a collapsed thread list that can be expanded to view and switch between recent threads. | Moved from Phase 1 — accessing historic threads from the right-side panel. |
-| **REQ-8** | Full thread management (pin, rename, delete) SHALL remain available only in the full-page LITA view. The panel thread list is read-only for switching. | Moved from Phase 1. |
-| **REQ-9** | The panel home screen SHALL display curated pre-canned prompts specific to the page type the user is currently on. | Moved from Phase 1 — complements "Ask IQ" by providing page-aware prompts when no selection/action has been made. |
-| **REQ-10** | The page-specific prompt mapping SHALL be configurable without code changes (e.g. via a prompt catalogue or configuration file). | Moved from Phase 1. |
-| **REQ-11** | If no page-specific prompts are configured for a page, the system SHALL fall back to the default global prompt set. | Moved from Phase 1. |
+| **REQ-PANEL-07** | The panel SHALL include a collapsed thread list that can be expanded to view and switch between recent threads. | Moved from Phase 1 — accessing historic threads from the right-side panel. |
+| **REQ-PANEL-08** | Full thread management (pin, rename, delete) SHALL remain available only in the full-page LITA view. The panel thread list is read-only for switching. | Moved from Phase 1. |
+| **REQ-PANEL-09** | The panel home screen SHALL display curated pre-canned prompts specific to the page type the user is currently on. | Moved from Phase 1 — complements "Ask IQ" by providing page-aware prompts when no selection/action has been made. |
+| **REQ-PANEL-10** | The page-specific prompt mapping SHALL be configurable without code changes (e.g. via a prompt catalogue or configuration file). | Moved from Phase 1. |
+| **REQ-PANEL-11** | If no page-specific prompts are configured for a page, the system SHALL fall back to the default global prompt set. | Moved from Phase 1. |
 
 ---
 
@@ -244,7 +244,7 @@ The existing prompt store is used. Matching logic:
 | Excluded | Rationale |
 |----------|-----------|
 | **GQL generation / data resolution** | The model already has schema access and generates GQL to resolve entity data. This is existing infrastructure, not Phase 2 scope. |
-| **Context for pages without tables or widgets** | Phase 2 focuses on tables with row selection and dashboard widgets. Other pages use page-specific pre-canned prompts (REQ-9/10/11, moved from Phase 1 to Phase 2). |
+| **Context for pages without tables or widgets** | Phase 2 focuses on tables with row selection and dashboard widgets. Other pages use page-specific pre-canned prompts (REQ-PANEL-09/10/11, moved from Phase 1 to Phase 2). |
 | **Personalised suggestion matching** | Separate feature. Prompt store matching is semantic, not personalised to user history. |
 | **Dynamic "Summarise this page"** | Phase 1 covers page-specific prompts including summarise-style prompts. Phase 2 does not change home screen behaviour. |
 | **Context persistence across threads** | Context is per-message. It does not carry over to subsequent messages unless the user triggers "Ask IQ" again. |

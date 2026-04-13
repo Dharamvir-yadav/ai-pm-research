@@ -1,7 +1,7 @@
 # User Stories: Feedback on Chat Response (Final)
 
 **Source:** Confluence requirement page "Feedback on Chat Response – Requirements"  
-**Requirements:** REQ-1, REQ-2, REQ-3, REQ-4  
+**Requirements:** REQ-FCF-01, REQ-FCF-02, REQ-FCF-03, REQ-FCF-04  
 **Updated:** After Devil's Advocate pass; incorporates clarification of "message", change-of-mind rule, dismiss behavior, error handling, and non-blocking submission NFR.
 
 ---
@@ -14,7 +14,7 @@
 
 ## Story 1: Display thumbs up and thumbs down on assistant messages
 
-**Maps to:** REQ-1
+**Maps to:** REQ-FCF-01
 
 ```gherkin
 Feature: Thumbs up/down controls on assistant messages
@@ -46,7 +46,7 @@ Feature: Thumbs up/down controls on assistant messages
 
 ## Story 2: Thumbs down records feedback on first click and offers optional reason
 
-**Maps to:** REQ-2
+**Maps to:** REQ-FCF-02
 
 ```gherkin
 Feature: Thumbs down records feedback and offers optional reason
@@ -90,7 +90,7 @@ Feature: Thumbs down records feedback and offers optional reason
 
 ## Story 3: Reason dropdown and optional free-text comment inline
 
-**Maps to:** REQ-3
+**Maps to:** REQ-FCF-03
 
 ```gherkin
 Feature: Reason selection and optional comment for thumbs down
@@ -121,7 +121,7 @@ Feature: Reason selection and optional comment for thumbs down
 
 ## Story 4: Store feedback payload (message_id, conversation_id, feedback_type, timestamp, reason, comment)
 
-**Maps to:** REQ-4
+**Maps to:** REQ-FCF-04
 
 ```gherkin
 Feature: Persist feedback with required and optional fields
@@ -157,7 +157,7 @@ Feature: Persist feedback with required and optional fields
 
 ## Story 5: Accessibility, inline UX, and non-blocking submission
 
-**Maps to:** REQ-1, REQ-2, REQ-3 (inline UX and accessibility NFRs)
+**Maps to:** REQ-FCF-01, REQ-FCF-02, REQ-FCF-03 (inline UX and accessibility NFRs)
 
 ```gherkin
 Feature: Accessible and inline feedback controls
@@ -190,7 +190,7 @@ Feature: Accessible and inline feedback controls
 
 ## Story 6: Rate limiting and already-submitted state
 
-**Maps to:** REQ-4 (NFR: rate limiting)
+**Maps to:** REQ-FCF-04 (NFR: rate limiting)
 
 ```gherkin
 Feature: Rate limiting and idempotent feedback submission
@@ -218,10 +218,10 @@ Feature: Rate limiting and idempotent feedback submission
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1, Story 5 |
-| REQ-2 | Story 2, Story 5 |
-| REQ-3 | Story 3, Story 5 |
-| REQ-4 | Story 4, Story 6 |
+| REQ-FCF-01 | Story 1, Story 5 |
+| REQ-FCF-02 | Story 2, Story 5 |
+| REQ-FCF-03 | Story 3, Story 5 |
+| REQ-FCF-04 | Story 4, Story 6 |
 
 - **Every requirement has at least one story:** Yes.
 - **Every story has at least one requirement:** Yes.
@@ -235,4 +235,4 @@ Feature: Rate limiting and idempotent feedback submission
 
 ---
 
-**Status:** Final. Ready for **publish_jira** (Epic link and "Maps to: REQ-x" in each story).
+**Status:** Final. Ready for **publish_jira** (Epic link and "Maps to:" each requirement ID, e.g. REQ-FCF-01, in each story).

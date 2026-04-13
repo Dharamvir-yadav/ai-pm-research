@@ -6,14 +6,15 @@ alwaysApply: true
 # Research Style
 
 ## Principles
-- **User-problem first**: Understand the problem to the level of the user's expression (what they say, do, feel) before proposing solutions.
+- **Principle**: Every section must earn its place; omit or one-line “no material finding” instead of padding.
+- **User-problem first**: Understand the problem to the level of the user's expression (what they say, do, feel) before proposing solutions. Ensure **Problem** is fully understood and establish a clear **WHY**
 - **To the point**: No filler. Every section should earn its place. Prefer honest scope and clear boundaries over sounding "complete."
 - **No overclaim**: Avoid incomplete or impractical conclusions. If something is uncertain or out of scope, state it explicitly.
-- **Deep problem understanding**: Aim to "see the user's expression" — their words, behaviour, and context — before designing the solution.
+- **Deep problem understanding**: Aim to "see and feel the user's expression" — their words, behaviour, and context — before designing the solution.
 
 ## Competition & Market Scan
 - **Always include** a competition/market analysis section in research. Look at how direct competitors and relevant enterprise AI products handle (or fail to handle) the same problem.
-- **Competitor list**: Use the competitive landscape defined in `00-project-context.mdc`. If the feature area has competitors not on that list, include them and note they are outside the standard set.
+- **Competitor list**: Use the **key competitors** and policy in **`context/industry-context.md`** (and **Competitive Landscape** / **Boundaries** in `00-research-scope.mdc`). If the feature area has competitors not on that list, include them and note they are outside the standard set.
 - **Genuine research only**: Do not fabricate competitor capabilities. If you cannot verify a feature or behaviour from a public source, say so explicitly ("unverified" or "could not confirm").
 - **Citations**: Cite sources — link to the product's specification page, documentation, blog post, press release, or social media post. If the source is a community discussion or third-party review, note that. Prefer primary sources (vendor's own site) over secondary.
 - **Format**: A concise table or bullet list per competitor — what they do, how, and what's relevant to the feature being researched. Do not write paragraphs per competitor.

@@ -1,7 +1,7 @@
 # User Stories: Badge on Chat Icon (Response-Ready Notification)
 
 **Source:** Confluence page "Badge on Chat Icon (Response-Ready Notification)" (pageId=1369343899)  
-**Requirements:** REQ-1 through REQ-14  
+**Requirements:** REQ-BDG-01 through REQ-BDG-14  
 **Feature:** Badge on Chat Icon (Response-Ready Notification)
 
 ---
@@ -16,7 +16,7 @@
 
 ## Story 1: Badge display on chat entry point when unviewed responses exist
 
-**Maps to:** REQ-1, REQ-2
+**Maps to:** REQ-BDG-01, REQ-BDG-02
 
 ```gherkin
 Feature: Badge visible on chat entry point
@@ -46,7 +46,7 @@ Feature: Badge visible on chat entry point
 
 ## Story 2: Badge visual states (ready vs error/attention)
 
-**Maps to:** REQ-3
+**Maps to:** REQ-BDG-03
 
 ```gherkin
 Feature: Badge visual states indicate response status
@@ -72,7 +72,7 @@ Feature: Badge visual states indicate response status
 
 ## Story 3: Badge lifecycle and viewed definition
 
-**Maps to:** REQ-4, REQ-5, REQ-6
+**Maps to:** REQ-BDG-04, REQ-BDG-05, REQ-BDG-06
 
 ```gherkin
 Feature: Badge appears and disappears based on response completion and viewing
@@ -112,7 +112,7 @@ Feature: Badge appears and disappears based on response completion and viewing
 
 ## Story 4: Server-side storage and sync of viewed state
 
-**Maps to:** REQ-7, REQ-9
+**Maps to:** REQ-BDG-07, REQ-BDG-09
 
 ```gherkin
 Feature: Viewed state persisted server-side and synced across sessions
@@ -148,7 +148,7 @@ Feature: Viewed state persisted server-side and synced across sessions
 
 ## Story 5: Badge count rules (only completed responses)
 
-**Maps to:** REQ-8
+**Maps to:** REQ-BDG-08
 
 ```gherkin
 Feature: Badge counts only completed responses
@@ -174,7 +174,7 @@ Feature: Badge counts only completed responses
 
 ## Story 6: Configurable TTL for unviewed responses
 
-**Maps to:** REQ-10
+**Maps to:** REQ-BDG-10
 
 ```gherkin
 Feature: Unviewed responses expire after configurable TTL
@@ -207,7 +207,7 @@ Feature: Unviewed responses expire after configurable TTL
 
 ## Story 7: Accessibility (screen reader, contrast, reduced motion)
 
-**Maps to:** REQ-11, REQ-12, REQ-13
+**Maps to:** REQ-BDG-11, REQ-BDG-12, REQ-BDG-13
 
 ```gherkin
 Feature: Accessible badge notification
@@ -248,7 +248,7 @@ Feature: Accessible badge notification
 
 ---
 
-## Technical note: Badge logic is event-driven automation only (REQ-14)
+## Technical note: Badge logic is event-driven automation only (REQ-BDG-14)
 
 > Badge behaviour is fully deterministic and event-driven — no AI is involved. Badge count and state are calculated from task completion events, viewed events, and TTL expiry. AI is used only for generating the response content, not for any badge or notification logic.
 >
@@ -260,20 +260,20 @@ Feature: Accessible badge notification
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 1 |
-| REQ-3 | Story 2 |
-| REQ-4 | Story 3 |
-| REQ-5 | Story 3 |
-| REQ-6 | Story 3 |
-| REQ-7 | Story 4 |
-| REQ-8 | Story 5 |
-| REQ-9 | Story 4 |
-| REQ-10 | Story 6 |
-| REQ-11 | Story 7 |
-| REQ-12 | Story 7 |
-| REQ-13 | Story 7 |
-| REQ-14 | Technical note (see below) |
+| REQ-BDG-01 | Story 1 |
+| REQ-BDG-02 | Story 1 |
+| REQ-BDG-03 | Story 2 |
+| REQ-BDG-04 | Story 3 |
+| REQ-BDG-05 | Story 3 |
+| REQ-BDG-06 | Story 3 |
+| REQ-BDG-07 | Story 4 |
+| REQ-BDG-08 | Story 5 |
+| REQ-BDG-09 | Story 4 |
+| REQ-BDG-10 | Story 6 |
+| REQ-BDG-11 | Story 7 |
+| REQ-BDG-12 | Story 7 |
+| REQ-BDG-13 | Story 7 |
+| REQ-BDG-14 | Technical note (see below) |
 
 - **Every requirement has at least one story or technical note:** Yes.
 - **Every story has at least one requirement:** Yes.
@@ -288,7 +288,7 @@ Feature: Accessible badge notification
 | Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
 | Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
 | Domain terms | **ATDD - Domain Terms** — use **"To do"** |
-| Maps to REQ-x | **Description** |
+| Maps to requirement ID | **Description** |
 
 ---
 

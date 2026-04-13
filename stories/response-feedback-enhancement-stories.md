@@ -6,7 +6,7 @@
 
 ## Story 1 — Structured negative feedback: reason panel and dismissal
 
-**Maps to:** REQ-1, REQ-2
+**Maps to:** REQ-RF-01, REQ-RF-02
 
 ```gherkin
 Feature: Structured negative feedback — reason panel after thumbs-down
@@ -52,7 +52,7 @@ Feature: Structured negative feedback — reason panel after thumbs-down
 
 ## Story 2 — Optional improvement text after reason
 
-**Maps to:** REQ-3, REQ-7
+**Maps to:** REQ-RF-03, REQ-RF-07
 
 ```gherkin
 Feature: Optional free-text improvement after negative reason
@@ -77,7 +77,7 @@ Feature: Optional free-text improvement after negative reason
     Given my tenant has the optional comment field disabled in org settings
     When I complete the negative feedback flow after selecting a reason
     Then the optional text field is not shown
-    And I can still submit structured feedback (REQ-7a)
+    And I can still submit structured feedback (REQ-RF-07A)
 
   Scenario: Keyboard and ARIA for optional field
     Given the optional improvement field is visible
@@ -90,7 +90,7 @@ Feature: Optional free-text improvement after negative reason
 
 ## Story 3 — Submit acknowledgement and unsafe escalation copy
 
-**Maps to:** REQ-4
+**Maps to:** REQ-RF-04
 
 ```gherkin
 Feature: Feedback submit acknowledgement
@@ -126,7 +126,7 @@ Feature: Feedback submit acknowledgement
 
 ## Story 4 — Server-side feedback event capture
 
-**Maps to:** REQ-5
+**Maps to:** REQ-RF-05
 
 ```gherkin
 Feature: Server-side metadata for each feedback event
@@ -158,7 +158,7 @@ Feature: Server-side metadata for each feedback event
 
 ## Story 5 — PII redaction on free-text ingest
 
-**Maps to:** REQ-6
+**Maps to:** REQ-RF-06
 
 ```gherkin
 Feature: PII redaction on optional feedback text
@@ -188,7 +188,7 @@ Feature: PII redaction on optional feedback text
 
 ## Story 6 — Tenant/org configuration for feedback UX
 
-**Maps to:** REQ-7
+**Maps to:** REQ-RF-07
 
 ```gherkin
 Feature: Tenant org-level feedback controls
@@ -222,7 +222,7 @@ Feature: Tenant org-level feedback controls
 
 ## Story 7 — Internal analytics dashboard (v0)
 
-**Maps to:** REQ-8, REQ-6, NFR-5
+**Maps to:** REQ-RF-08, REQ-RF-06, NFR-5
 
 ```gherkin
 Feature: Internal analytics dashboard for response feedback (v0)
@@ -250,7 +250,7 @@ Feature: Internal analytics dashboard for response feedback (v0)
   Scenario: Drill-down with redacted view
     Given I drill down to a conversation or thread
     When I view associated feedback detail
-    Then free text and fields are shown in redacted form consistent with ingest rules (REQ-6)
+    Then free text and fields are shown in redacted form consistent with ingest rules (REQ-RF-06)
 
   Scenario: Dashboard accessibility
     Given I use keyboard and assistive technology on the dashboard
@@ -269,7 +269,7 @@ Feature: Internal analytics dashboard for response feedback (v0)
 
 ## Story 8 — Thumbs-up unchanged (V1 regression guard)
 
-**Maps to:** REQ-9
+**Maps to:** REQ-RF-09
 
 ```gherkin
 Feature: Thumbs-up feedback unchanged in V1
@@ -294,7 +294,7 @@ Feature: Thumbs-up feedback unchanged in V1
 
 ## Story 9 — Taxonomy validation with IT Admins
 
-**Maps to:** REQ-10
+**Maps to:** REQ-RF-10
 
 ```gherkin
 Feature: Validate negative-feedback taxonomy before final labels
@@ -322,17 +322,17 @@ Feature: Validate negative-feedback taxonomy before final labels
 
 | Requirement | Story(ies) | Covered? |
 |-------------|------------|----------|
-| REQ-1 | Story 1 | Yes |
-| REQ-2 | Story 1 | Yes |
-| REQ-3 | Story 2 | Yes |
-| REQ-4 | Story 3 | Yes |
-| REQ-5 | Story 4 | Yes |
-| REQ-6 | Story 5, Story 7 | Yes |
-| REQ-7 | Story 2, Story 6 | Yes |
-| REQ-8 | Story 7 | Yes |
-| REQ-9 | Story 8 | Yes |
-| REQ-10 | Story 9 | Yes |
+| REQ-RF-01 | Story 1 | Yes |
+| REQ-RF-02 | Story 1 | Yes |
+| REQ-RF-03 | Story 2 | Yes |
+| REQ-RF-04 | Story 3 | Yes |
+| REQ-RF-05 | Story 4 | Yes |
+| REQ-RF-06 | Story 5, Story 7 | Yes |
+| REQ-RF-07 | Story 2, Story 6 | Yes |
+| REQ-RF-08 | Story 7 | Yes |
+| REQ-RF-09 | Story 8 | Yes |
+| REQ-RF-10 | Story 9 | Yes |
 
 **NFR coverage:** NFR-1 → Stories 1, 3 | NFR-2 → Stories 1, 2, 7 | NFR-3 → Stories 3, 4 | NFR-4 → Story 5 | NFR-5 → Story 7
 
-**No gaps — every REQ has at least one story, every story maps to at least one REQ.**
+**No gaps — every requirement has at least one story, every story maps to at least one requirement.**

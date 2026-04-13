@@ -12,15 +12,22 @@ When the user asks for a **Devil's Advocate** pass (or when the workflow says to
 - **Find gaps**: Missing users, edge cases, failure modes, or scenarios not covered by the requirement or stories.
 - **Argue against**: Briefly argue why the requirement or scope might be wrong, too broad, too narrow, or risky.
 - **Stay constructive**: Output should be a short, actionable list of risks and open questions, not negativity for its own sake.
+- **Critically assess** whether Security, Privacy, Cost, compliance, and Latency are adequately covered or over/under-claimed ( `00-research-scope.mdc` and `01-research-style.mdc`).
 
 ## When to run
-- After research is done and before or after the Confluence page is created; and/or
+- After research is done and before the Confluence page is created; and/or
 - After user stories are drafted and before publishing to Jira.
+- **ALWAYS** ask user for devils advocate pass, once user confirms - run it
 
 ## Output format
 - **Assumptions challenged**: List assumption + why it might fail.
 - **Gaps**: What’s missing (users, cases, NFRs)?
 - **Counter-arguments**: 1–3 reasons the requirement or scope could be wrong or harmful.
-- **Recommendations**: Optional next steps (e.g. "Add REQ for X" or "Validate Y with users").
+- **Recommendations**: Optional next steps (e.g. "Add a requirement (`REQ-{AREA}-{NN}`) for X" or "Validate Y with users").
+- **NFR's**: **IF applies** Security, Privacy, Cost, compliance, and Latency section. Include what has been ignored in the research or challenge these aspects
+
+##Important considerations
 
 Do not block the workflow; the product owner decides whether to change the requirement or stories based on this pass.
+
+Do not defend the draft; assume the weakest interpretation of evidence.

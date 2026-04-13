@@ -43,7 +43,7 @@ When creating or publishing stories in Jira, house the content as follows:
 | **Priority** | Major |
 | **Components** | UGAIN-PL |
 | **BST - Business Segment Target** | Commercial |
-| **Labels** | IQ-Platform, NotGroomed |
+| **Labels** | IQ-Platform, NotGroomed, CREATED_BY_CURSOR |
 
 ---
 

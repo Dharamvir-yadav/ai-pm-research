@@ -16,9 +16,11 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 2. **Set your defaults**  
    Edit `.cursor/defaults.md`: set Jira project key, Confluence space, and default parent page(s). For each run, you will provide or be asked for **Epic** (Jira) and **Confluence page** (target/parent) as needed.
 
-3. **Optional: add project context**  
-   - Put a short “what this product is” / “what we’re doing” in `context/` or paste it in chat.  
-   - Add a screenshot in `context/` for current UI/themes.  
+3. **Customize context (SSOT)**  
+   - **`context/product-definition.md`** — product name, platform, **current features** (update after each release).  
+   - **`context/industry-context.md`** — industry, personas & JTBD, competitors, enterprise customer archetypes, **SMB research toggle** (`yes` / `no`).  
+   - Put initiative “what we’re doing” in chat or a note in `context/`.  
+   - Optional: screenshots in `context/` or `base-features-screenshots/` for current UI/themes.  
    - Customize `templates/confluence-requirement-template.md` with your Confluence page format.
 
 4. **Run the workflow in Composer**  
@@ -28,7 +30,7 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
    > 1) Run a Devil's Advocate pass on the research.  
    > 2) Create and publish the requirement page in Confluence using our format (with requirement IDs).  
    > 3) Create user stories and technical tasks in Gherkin format; add NFRs where applicable. Ensure every story maps to a requirement ID.  
-   > 4) Validate traceability (every REQ has a story, every story has a REQ).  
+   > 4) Validate traceability (every requirement has a story, every story has a requirement ID).  
    > 5) Publish the stories to Jira.  
    > 6) Give me a single prompt I can paste into Bolt to build a working prototype.
 
@@ -40,7 +42,9 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 | `.cursor/rules/` | Project and research rules, Jira/Confluence defaults pointer, **story format (Gherkin + NFRs)**, **Devil's Advocate**, **story–requirement traceability**. |
 | `AGENTS.md` | Workflow steps, when to run Devil's Advocate and traceability, Atlassian defaults. |
 | `templates/confluence-requirement-template.md` | Confluence page structure. Replace with your team’s format. |
-| `context/` | Optional: project one-pager, screenshots (for theme/current UI only). |
+| `context/product-definition.md` | Product SSOT: name, platform, **current features** only. |
+| `context/industry-context.md` | Industry SSOT: domain, personas, competitors, customer archetypes, SMB research toggle. |
+| `context/` (other) | Optional: initiative notes, screenshots (theme/current UI only). |
 
 ## Story format (Gherkin + NFRs)
 
@@ -56,7 +60,7 @@ Use this project to go from **1–2 lines of feature idea** to **research → Co
 
 ## Story ↔ requirement mapping
 
-- Every story must **map to at least one requirement ID** (e.g. REQ-1) from the Confluence page.  
+- Every story must **map to at least one requirement ID** (e.g. REQ-AUTH-01) from the Confluence page.  
 - Before publishing to Jira, the agent checks: every requirement has ≥1 story, every story has ≥1 requirement.  
 - Rule: `.cursor/rules/06-story-requirement-traceability.mdc`.
 

@@ -8,8 +8,8 @@ alwaysApply: true
 Every user story and technical task **must map to at least one requirement** from the Confluence requirement page.
 
 ## Rules
-- **Requirement IDs**: The Confluence page uses stable requirement IDs (e.g. `REQ-1`, `REQ-2`). Each story must reference which requirement(s) it fulfils.
-- **In Jira**: In the story description or a custom field (if your Jira has one), include a line like: **Maps to:** `REQ-1`, `REQ-2`.
+- **Requirement IDs**: The Confluence page uses stable hierarchical IDs: `REQ-{AREA}-{NN}` where `AREA` is a short uppercase feature code (e.g. `AUTH`, `DASH`) and `NN` is a two-digit sequence per area (`01`, `02`, …). Examples: `REQ-AUTH-01`, `REQ-AUTH-02`. Each story must reference which requirement(s) it fulfils.
+- **In Jira**: In the story description or a custom field (if your Jira has one), include a line like **Maps to:** with each requirement ID as a **hyperlink to the Confluence requirements page**—ideally to the **section or anchor** for that ID (same page URL, different fragment/heading per ID if your Confluence page structure supports it). Example (markdown-style descriptions): `Maps to: [REQ-AUTH-01](<confluence-url>#REQ-AUTH-01), [REQ-AUTH-02](<confluence-url>#REQ-AUTH-02)`. If the editor does not support markdown, use the equivalent **rich-text link** or **wiki link** so each ID is clickable, not plain text.
 - **Validation**: Before publishing stories to Jira, check that (1) every requirement has at least one story, and (2) every story has at least one requirement ID. Flag any requirement with no story and any story with no requirement.
 - **Technical tasks**: Sub-tasks or technical tasks should link to the parent story; the parent story holds the requirement mapping. If a task directly implements a requirement, it may also list the requirement ID.
 

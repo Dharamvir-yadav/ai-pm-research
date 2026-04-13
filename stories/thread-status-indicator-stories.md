@@ -1,13 +1,13 @@
 # Thread Status Indicator — User Stories (Draft)
 
 **Product**: Lenovo IT Assist | **Persona**: IT Admin  
-**Maps to**: REQ-1 through REQ-10 | **NFRs**: NFR-1, NFR-2, NFR-3
+**Maps to**: REQ-TSI-01 through REQ-TSI-10 | **NFRs**: NFR-1, NFR-2, NFR-3
 
 ---
 
 ## Story 1: [Thread Status] Display Generating status on thread chips
 
-**Maps to:** REQ-1, REQ-3, REQ-4, REQ-6, REQ-9
+**Maps to:** REQ-TSI-01, REQ-TSI-03, REQ-TSI-04, REQ-TSI-06, REQ-TSI-09
 
 ```gherkin
 Feature: Thread chip Generating status indicator
@@ -52,7 +52,7 @@ Feature: Thread chip Generating status indicator
 
 ## Story 2: [Thread Status] Display Error status on thread chips
 
-**Maps to:** REQ-2, REQ-5
+**Maps to:** REQ-TSI-02, REQ-TSI-05
 
 ```gherkin
 Feature: Thread chip Error status indicator
@@ -82,7 +82,7 @@ Feature: Thread chip Error status indicator
 
 ## Story 3: [Thread Status] Clear status when user stops generation
 
-**Maps to:** REQ-7
+**Maps to:** REQ-TSI-07
 
 ```gherkin
 Feature: Thread chip status clears on user stop
@@ -103,7 +103,7 @@ Feature: Thread chip status clears on user stop
 
 ## Story 4: [Thread Status] Defer Generating indicator for fast responses
 
-**Maps to:** REQ-8
+**Maps to:** REQ-TSI-08
 
 ```gherkin
 Feature: No flash for fast responses
@@ -129,7 +129,7 @@ Feature: No flash for fast responses
 
 ## Story 5: [Thread Status] Error state informational only on chip
 
-**Maps to:** REQ-10
+**Maps to:** REQ-TSI-10
 
 ```gherkin
 Feature: Error chip is informational only
@@ -152,16 +152,16 @@ Feature: Error chip is informational only
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 2 |
-| REQ-3 | Story 1 |
-| REQ-4 | Story 1 |
-| REQ-5 | Story 2 |
-| REQ-6 | Story 1 |
-| REQ-7 | Story 3 |
-| REQ-8 | Story 4 |
-| REQ-9 | Story 1 |
-| REQ-10 | Story 5 |
+| REQ-TSI-01 | Story 1 |
+| REQ-TSI-02 | Story 2 |
+| REQ-TSI-03 | Story 1 |
+| REQ-TSI-04 | Story 1 |
+| REQ-TSI-05 | Story 2 |
+| REQ-TSI-06 | Story 1 |
+| REQ-TSI-07 | Story 3 |
+| REQ-TSI-08 | Story 4 |
+| REQ-TSI-09 | Story 1 |
+| REQ-TSI-10 | Story 5 |
 
 | NFR | Story(ies) |
 |-----|------------|
@@ -169,4 +169,4 @@ Feature: Error chip is informational only
 | NFR-2 | Story 1 |
 | NFR-3 | Story 1, Story 2 |
 
-**Validation:** ✓ Every requirement (REQ-1 through REQ-10) is covered by at least one story. ✓ Every story maps to at least one requirement. ✓ No gaps.
+**Validation:** ✓ Every requirement (REQ-TSI-01 through REQ-TSI-10) is covered by at least one story. ✓ Every story maps to at least one requirement. ✓ No gaps.

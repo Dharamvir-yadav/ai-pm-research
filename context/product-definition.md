@@ -1,8 +1,10 @@
 # Product Definition — Lenovo IT Assist
 
+**Personas, market, competitors, and industry norms:** see **`context/industry-context.md`**. This file lists **product and platform identity** and **current capabilities only** (update after each release).
+
 ## Product & Platform
 
-- **Product name**: **Lenovo IT Assist**, housed within the **Lenovo Device Orchestration** platform. Key persona is **IT Admin**.
+- **Product name**: **Lenovo IT Assist**, housed within the **Lenovo Device Orchestration** platform.
 - **Parent platform**: Lenovo Device Orchestration includes: Dashboard, Device Management, Device Insights, **Lenovo IT Assist**, Support Tickets, Configurations & Settings. IT Assist is one module in this broader platform.
 
 ## Current Solution

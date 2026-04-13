@@ -1,7 +1,7 @@
 # User Stories: Thumbs Up / Thumbs Down Feedback on Chat Response
 
 **Source:** Requirements set (Confluence page skipped)  
-**Requirements:** REQ-1, REQ-2, REQ-3, REQ-4, REQ-5, REQ-6, REQ-7, REQ-8  
+**Requirements:** REQ-TUD-01, REQ-TUD-02, REQ-TUD-03, REQ-TUD-04, REQ-TUD-05, REQ-TUD-06, REQ-TUD-07, REQ-TUD-08  
 **Status:** Draft for Devil's Advocate review. Do not publish to Jira until sign-off.
 
 ---
@@ -15,7 +15,7 @@
 
 ## Story 1: Thumbs up control on completed assistant messages
 
-**Maps to:** REQ-1
+**Maps to:** REQ-TUD-01
 
 ```gherkin
 Feature: Thumbs up feedback on assistant message
@@ -37,7 +37,7 @@ Feature: Thumbs up feedback on assistant message
 
 ## Story 2: Thumbs down control on completed assistant messages
 
-**Maps to:** REQ-2
+**Maps to:** REQ-TUD-02
 
 ```gherkin
 Feature: Thumbs down feedback on assistant message
@@ -58,7 +58,7 @@ Feature: Thumbs down feedback on assistant message
 
 ## Story 3: Optional reason for thumbs down (inline; dismiss vs submit)
 
-**Maps to:** REQ-3
+**Maps to:** REQ-TUD-03
 
 ```gherkin
 Feature: Optional reason for thumbs down inline under message
@@ -92,7 +92,7 @@ Feature: Optional reason for thumbs down inline under message
 
 ## Story 4: Feedback stored with message/session, user, vote, timestamp, optional reason
 
-**Maps to:** REQ-4
+**Maps to:** REQ-TUD-04
 
 ```gherkin
 Feature: Feedback persisted for analysis by flow type and time
@@ -113,7 +113,7 @@ Feature: Feedback persisted for analysis by flow type and time
 
 ## Story 5: Vote is final after submit; UI shows submitted state and disables other option
 
-**Maps to:** REQ-5
+**Maps to:** REQ-TUD-05
 
 ```gherkin
 Feature: Final vote state after submission
@@ -134,7 +134,7 @@ Feature: Final vote state after submission
 
 ## Story 6: Change of mind before submit — switch up/down; only final state stored
 
-**Maps to:** REQ-6
+**Maps to:** REQ-TUD-06
 
 ```gherkin
 Feature: Change vote before submission
@@ -162,7 +162,7 @@ Feature: Change vote before submission
 
 ## Story 7: Errors and offline — best-effort send, message, retry, non-blocking
 
-**Maps to:** REQ-7
+**Maps to:** REQ-TUD-07
 
 ```gherkin
 Feature: Resilient feedback submission (errors and offline)
@@ -189,7 +189,7 @@ Feature: Resilient feedback submission (errors and offline)
 
 ## Story 8: Keyboard and screen-reader accessibility for thumbs and reason UI
 
-**Maps to:** REQ-8
+**Maps to:** REQ-TUD-08
 
 ```gherkin
 Feature: Accessible thumbs and reason UI
@@ -219,14 +219,14 @@ Feature: Accessible thumbs and reason UI
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 2 |
-| REQ-3 | Story 3 |
-| REQ-4 | Story 4 |
-| REQ-5 | Story 5 |
-| REQ-6 | Story 6 |
-| REQ-7 | Story 7 |
-| REQ-8 | Story 8 |
+| REQ-TUD-01 | Story 1 |
+| REQ-TUD-02 | Story 2 |
+| REQ-TUD-03 | Story 3 |
+| REQ-TUD-04 | Story 4 |
+| REQ-TUD-05 | Story 5 |
+| REQ-TUD-06 | Story 6 |
+| REQ-TUD-07 | Story 7 |
+| REQ-TUD-08 | Story 8 |
 
 - **Every requirement has at least one story:** Yes.
 - **Every story has at least one requirement:** Yes.

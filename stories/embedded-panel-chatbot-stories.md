@@ -1,7 +1,7 @@
 # User Stories: Embedded Panel Chatbot — Phase 1
 
 **Source:** Confluence page "Embedded Panel Chatbot — Phase 1 Requirements" (pageId=1372618985)
-**Requirements:** REQ-1 through REQ-17, NFR-1 through NFR-6
+**Requirements:** REQ-PANEL-01 through REQ-PANEL-17, NFR-1 through NFR-6
 **Feature:** Embedded Panel Chatbot
 
 ---
@@ -18,7 +18,7 @@
 
 ## Story 1: Panel entry point in top navigation
 
-**Maps to:** REQ-1, REQ-16, REQ-17
+**Maps to:** REQ-PANEL-01, REQ-PANEL-16, REQ-PANEL-17
 
 ```gherkin
 Feature: IT Assist panel button in top navigation bar
@@ -57,7 +57,7 @@ Feature: IT Assist panel button in top navigation bar
 
 ## Story 2: Open and close the panel
 
-**Maps to:** REQ-2, REQ-3, REQ-14
+**Maps to:** REQ-PANEL-02, REQ-PANEL-03, REQ-PANEL-14
 
 ```gherkin
 Feature: Open and close the right-side chatbot panel
@@ -106,7 +106,7 @@ Feature: Open and close the right-side chatbot panel
 
 ## Story 3: Thread persistence and per-message context labels
 
-**Maps to:** REQ-4
+**Maps to:** REQ-PANEL-04
 
 ```gherkin
 Feature: Thread persistence with per-message page context labels
@@ -145,7 +145,7 @@ Feature: Thread persistence with per-message page context labels
 
 ## Story 4: New thread button ("+" button)
 
-**Maps to:** REQ-5
+**Maps to:** REQ-PANEL-05
 
 ```gherkin
 Feature: Start a new thread from panel header
@@ -177,13 +177,13 @@ Feature: Start a new thread from panel header
 
 ## ~~Story 5: Thread list in panel~~ — Moved to Phase 2
 
-*(REQ-7, REQ-8 moved to Phase 2. Accessing historic threads from the right-side panel will be covered in Phase 2.)*
+*(REQ-PANEL-07, REQ-PANEL-08 moved to Phase 2. Accessing historic threads from the right-side panel will be covered in Phase 2.)*
 
 ---
 
 ## Story 6: Navigate to full-page LITA from panel
 
-**Maps to:** REQ-6, REQ-15
+**Maps to:** REQ-PANEL-06, REQ-PANEL-15
 
 ```gherkin
 Feature: Navigate to full-page LITA from the panel
@@ -209,13 +209,13 @@ Feature: Navigate to full-page LITA from the panel
 
 ## ~~Story 7: Page-specific pre-canned prompts~~ — Removed (covered in Phase 2)
 
-*(REQ-9, REQ-10, REQ-11 removed from Phase 1. Page-specific prompts and smart suggestions are covered in Phase 2 via "Ask IQ" context-aware features.)*
+*(REQ-PANEL-09, REQ-PANEL-10, REQ-PANEL-11 removed from Phase 1. Page-specific prompts and smart suggestions are covered in Phase 2 via "Ask IQ" context-aware features.)*
 
 ---
 
 ## Story 8: Full capability parity in panel
 
-**Maps to:** REQ-12, REQ-13
+**Maps to:** REQ-PANEL-12, REQ-PANEL-13
 
 ```gherkin
 Feature: Full chatbot capabilities in the panel
@@ -327,23 +327,23 @@ Feature: Panel performance and responsive behaviour
 
 | Requirement | Story(ies) |
 |-------------|------------|
-| REQ-1 | Story 1 |
-| REQ-2 | Story 2 |
-| REQ-3 | Story 2 |
-| REQ-4 | Story 3 |
-| REQ-5 | Story 4 |
-| REQ-6 | Story 6 |
-| REQ-7 | Moved to Phase 2 |
-| REQ-8 | Moved to Phase 2 |
-| REQ-9 | Removed (covered in Phase 2) |
-| REQ-10 | Removed (covered in Phase 2) |
-| REQ-11 | Removed (covered in Phase 2) |
-| REQ-12 | Story 8 (agentic workflows removed) |
-| REQ-13 | Story 8 |
-| REQ-14 | Story 2 |
-| REQ-15 | Story 6 |
-| REQ-16 | Story 1 |
-| REQ-17 | Story 1 |
+| REQ-PANEL-01 | Story 1 |
+| REQ-PANEL-02 | Story 2 |
+| REQ-PANEL-03 | Story 2 |
+| REQ-PANEL-04 | Story 3 |
+| REQ-PANEL-05 | Story 4 |
+| REQ-PANEL-06 | Story 6 |
+| REQ-PANEL-07 | Moved to Phase 2 |
+| REQ-PANEL-08 | Moved to Phase 2 |
+| REQ-PANEL-09 | Removed (covered in Phase 2) |
+| REQ-PANEL-10 | Removed (covered in Phase 2) |
+| REQ-PANEL-11 | Removed (covered in Phase 2) |
+| REQ-PANEL-12 | Story 8 (agentic workflows removed) |
+| REQ-PANEL-13 | Story 8 |
+| REQ-PANEL-14 | Story 2 |
+| REQ-PANEL-15 | Story 6 |
+| REQ-PANEL-16 | Story 1 |
+| REQ-PANEL-17 | Story 1 |
 
 ---
 
@@ -355,7 +355,7 @@ Feature: Panel performance and responsive behaviour
 | Story narrative (As a … I want … So that …) | **ATDD - As Persona** |
 | Acceptance criteria (Gherkin) | **ATDD - Acceptance Criteria** |
 | Domain terms | **ATDD - Domain Terms** — use **"To do"** |
-| Maps to REQ-x | **Description** |
+| Maps to requirement ID | **Description** |
 
 ---
 

@@ -25,6 +25,6 @@ Add more screenshots as the UI evolves. Keep filenames descriptive.
 
 ## What this folder is NOT for
 
-- **Not a source of requirements or business rules.** For project context and boundaries, see `.cursor/rules/00-project-context.mdc`.
+- **Not a source of requirements or business rules.** For research scope and boundaries, see `.cursor/rules/00-research-scope.mdc`.
 - **Not a design system or spec.** Screenshots are for visual pattern extraction only.
 - **Not updated automatically.** Refresh screenshots when the UI changes significantly.

@@ -8,7 +8,7 @@
 
 ## Story 1: Rules-based pre-generation blocking
 
-**Maps to:** REQ-1
+**Maps to:** REQ-DG-01
 
 | Jira field | Content |
 |------------|---------|
@@ -16,7 +16,7 @@
 | **ATDD - As Persona** | As an IT Admin, I want obvious out-of-domain queries to be blocked by rules before any LLM call, so that we reduce cost and latency for clearly irrelevant requests. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-1. Rules layer runs first in the classification pipeline. |
+| **Description** | Maps to: REQ-DG-01. Rules layer runs first in the classification pipeline. |
 
 ### Gherkin
 
@@ -45,7 +45,7 @@ Feature: Rules-based pre-generation domain blocking
 
 ## Story 2: Lightweight classifier for domain classification
 
-**Maps to:** REQ-2
+**Maps to:** REQ-DG-02
 
 | Jira field | Content |
 |------------|---------|
@@ -53,7 +53,7 @@ Feature: Rules-based pre-generation domain blocking
 | **ATDD - As Persona** | As an IT Admin, I want remaining queries to be classified by a lightweight model, so that high-confidence out-of-domain queries are redirected without invoking the main LLM. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-2. Runs after rules layer; only queries not blocked by rules reach this stage. |
+| **Description** | Maps to: REQ-DG-02. Runs after rules layer; only queries not blocked by rules reach this stage. |
 
 ### Gherkin
 
@@ -89,7 +89,7 @@ Feature: Lightweight classifier domain classification
 
 ## Story 3: LLM fallback for low-confidence classification
 
-**Maps to:** REQ-3
+**Maps to:** REQ-DG-03
 
 | Jira field | Content |
 |------------|---------|
@@ -97,7 +97,7 @@ Feature: Lightweight classifier domain classification
 | **ATDD - As Persona** | As an IT Admin, I want low-confidence queries to be classified via a structured LLM call before the main generation, so that we only use the main LLM when the query is in-domain. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-3. Invoked only for queries that pass rules and have low classifier confidence. |
+| **Description** | Maps to: REQ-DG-03. Invoked only for queries that pass rules and have low classifier confidence. |
 
 ### Gherkin
 
@@ -127,7 +127,7 @@ Feature: LLM fallback for low-confidence domain classification
 
 ## Story 4: Two-stage classification pipeline
 
-**Maps to:** REQ-4
+**Maps to:** REQ-DG-04
 
 | Jira field | Content |
 |------------|---------|
@@ -135,7 +135,7 @@ Feature: LLM fallback for low-confidence domain classification
 | **ATDD - As Persona** | As an IT Admin, I want queries to go through a two-stage classification, so that we first check domain fit and then route to the right capability (KB, Data insights, Actions, Agentic). |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-4. Stage 1: IN_DOMAIN/OUT_OF_DOMAIN. Stage 2: KB, DATA_INSIGHTS, ACTIONS, AGENTIC, UNSUPPORTED. |
+| **Description** | Maps to: REQ-DG-04. Stage 1: IN_DOMAIN/OUT_OF_DOMAIN. Stage 2: KB, DATA_INSIGHTS, ACTIONS, AGENTIC, UNSUPPORTED. |
 
 ### Gherkin
 
@@ -172,7 +172,7 @@ Feature: Two-stage classification pipeline
 
 ## Story 5: Out-of-domain redirect message
 
-**Maps to:** REQ-5
+**Maps to:** REQ-DG-05
 
 | Jira field | Content |
 |------------|---------|
@@ -180,7 +180,7 @@ Feature: Two-stage classification pipeline
 | **ATDD - As Persona** | As an IT Admin, I want a clear message when my query is out-of-domain, so that I understand the scope without false expectations. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-5. No generation attempt; no hint of future support. |
+| **Description** | Maps to: REQ-DG-05. No generation attempt; no hint of future support. |
 
 ### Gherkin
 
@@ -203,7 +203,7 @@ Feature: Out-of-domain redirect message
 
 ## Story 6: In-domain out-of-capability redirect message
 
-**Maps to:** REQ-6
+**Maps to:** REQ-DG-06
 
 | Jira field | Content |
 |------------|---------|
@@ -211,7 +211,7 @@ Feature: Out-of-domain redirect message
 | **ATDD - As Persona** | As an IT Admin, I want a helpful message when my query is in-domain but not supported by any capability, so that I can retry with a supported use case. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-6. Softer tone than out-of-domain; lists supported capabilities. |
+| **Description** | Maps to: REQ-DG-06. Softer tone than out-of-domain; lists supported capabilities. |
 
 ### Gherkin
 
@@ -235,7 +235,7 @@ Feature: In-domain out-of-capability redirect message
 
 ## Story 7: Classification observability
 
-**Maps to:** REQ-7
+**Maps to:** REQ-DG-07
 
 | Jira field | Content |
 |------------|---------|
@@ -243,7 +243,7 @@ Feature: In-domain out-of-capability redirect message
 | **ATDD - As Persona** | As an IT Admin (or platform operator), I want classification results, confidence scores, and path taken to be logged, so that we can tune the system and audit decisions. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-7. Path = rules / classifier / LLM. |
+| **Description** | Maps to: REQ-DG-07. Path = rules / classifier / LLM. |
 
 ### Gherkin
 
@@ -280,7 +280,7 @@ Feature: Classification observability
 
 ## Story 8: System prompt domain reinforcement
 
-**Maps to:** REQ-8
+**Maps to:** REQ-DG-08
 
 | Jira field | Content |
 |------------|---------|
@@ -288,7 +288,7 @@ Feature: Classification observability
 | **ATDD - As Persona** | As an IT Admin, I want domain rules reinforced in the system prompt, so that even if a query slips through pre-generation checks, the LLM respects domain boundaries. |
 | **ATDD - Acceptance Criteria** | See Gherkin below |
 | **ATDD - Domain Terms** | To do |
-| **Description** | Maps to: REQ-8. Secondary layer; primary blocking is pre-generation. |
+| **Description** | Maps to: REQ-DG-08. Secondary layer; primary blocking is pre-generation. |
 
 ### Gherkin
 
@@ -313,17 +313,17 @@ Feature: System prompt domain reinforcement
 
 | Requirement | Description | Story(ies) |
 |-------------|-------------|------------|
-| REQ-1 | Pre-generation domain classification (rules layer) | Story 1 |
-| REQ-2 | Pre-generation domain classification (lightweight classifier) | Story 2 |
-| REQ-3 | Pre-generation domain classification (LLM fallback) | Story 3 |
-| REQ-4 | Two-stage classification | Story 4 |
-| REQ-5 | Out-of-domain redirect | Story 5 |
-| REQ-6 | In-domain out-of-capability redirect | Story 6 |
-| REQ-7 | Observability | Story 7 |
-| REQ-8 | System prompt reinforcement | Story 8 |
+| REQ-DG-01 | Pre-generation domain classification (rules layer) | Story 1 |
+| REQ-DG-02 | Pre-generation domain classification (lightweight classifier) | Story 2 |
+| REQ-DG-03 | Pre-generation domain classification (LLM fallback) | Story 3 |
+| REQ-DG-04 | Two-stage classification | Story 4 |
+| REQ-DG-05 | Out-of-domain redirect | Story 5 |
+| REQ-DG-06 | In-domain out-of-capability redirect | Story 6 |
+| REQ-DG-07 | Observability | Story 7 |
+| REQ-DG-08 | System prompt reinforcement | Story 8 |
 
 **Validation:**
-- Every requirement (REQ-1 through REQ-8) has exactly one story.
+- Every requirement (REQ-DG-01 through REQ-DG-08) has exactly one story.
 - Every story maps to exactly one requirement.
 - No gaps.
 

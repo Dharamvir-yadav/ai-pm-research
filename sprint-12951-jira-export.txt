@@ -1,0 +1,752 @@
+Sprint 12951 — JQL: project = GAI AND sprint = 12951 AND issuetype in (Story, Task) AND component in (ugain-pl, ugain)
+Note: Jira MCP search_issues was not available in this session; data from POST https://jira.tc.lenovo.com/rest/api/2/search
+Story points: customfield_10002 (Story Points)
+ATDD/AC: customfield_12200 (ATDD - As Persona), customfield_12003 (ATDD - Acceptance Criteria), customfield_10400 (Acceptance Criteria), customfield_12004 (ATDD - Domain Terms)
+
+total=25 returned=25
+
+================================================================================
+key: GAI-3805
+summary: [3. GRAPHQL_ENABLEMENT] RAG4GQL in ldo-actions library
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["GRAPHQL_ENABLEMENT", "Groomed", "IQ-Platform"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2025-05-12T15:13:01.000+0000
+updated: 2026-03-12T13:05:03.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-5820
+summary: [DMS MCP]  MCP Server implementation
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 8.0
+labels: ["Groomed", "IQ-Platform", "NoAC"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2025-10-21T08:55:10.000+0000
+updated: 2026-03-17T09:54:55.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+h2. Acceptance Criteria
+h3. AC1: MCP Endpoint Accessibility
+ * [ ] POST /dms/mcp-service/mcp is reachable on each deployed environment (dev, qa)
+
+ * [ ] The endpoint responds to MCP initialize request with server info (name: dms-mcp-service, version: 0.0.1)
+
+ * [ ] Capability negotiation returns tool: true and resource: false, prompt: false, completion: false
+
+ * [ ] Mcp-Session-Id header is present in the response
+
+h3. AC2: Authentication and Authorization
+ * [ ] Requests without a Bearer token receive 401 Unauthorized
+
+ * [ ] Requests with an invalid/expired Bearer token receive 401 Unauthorized
+
+ * [ ] Requests without x-user-jwt header receive 400 with code MISSING_USER_JWT
+
+ * [ ] Requests with malformed x-user-jwt (not 3 dot-separated parts) receive 400 with code INVALID_USER_JWT
+ * [ ] Authenticated requests without dms_mcp_tools permission receive 403 with code ACCESS_DENIED and message Insufficient permissions for MCP access (cover the scenarios with the all the permissions or without any persmissions)
+
+ * -[ ] Authenticated requests without dms_mcp_tools READ permission receive 403 with code ACCESS_DENIED and message Insufficient permissions for MCP access-
+
+ * -[ ] Users with READ permission can invoke read-only tools (getOrganization, requestAssessment, getDevicesByPackageId, getSystemUpdatePackages, getBulkScheduleDeployStatus, getPackageTestingByPackageId, getBulkTestingStatus)-
+
+ * -[ ] Users without EXECUTE permission are denied access to bulkTesting, scheduleBulkTesting, markPackages, markOperation-
+
+ * -[ ] Users without UPDATE permission are denied access to bulkDeploy, scheduleBulkDeploy-
+
+h3. AC3: Organization Tools
+ * [ ] getOrganization returns organization details (orgId, timestamps, DOS/TSFA flags) for the authenticated user's org
+
+ * [ ] The tool correctly proxies to dms-device-management-service using the x-user-jwt token
+
+h3. AC4: System Update Tools
+ * [ ] requestAssessment returns a map of assessment counts
+
+ * [ ] getSystemUpdatePackages supports pagination (pageNumber, pageSize) and optional filters (testStates, search) and returns paginated results
+
+ * [ ] getDevicesByPackageId accepts packageId, pagination parameters, and excludeDeployed flag; returns device list
+
+ * [ ] bulkDeploy accepts requestId and deployments list; returns BulkDeployResponse with deployment results
+
+ * [ ] scheduleBulkDeploy accepts requestId, deployments, and scheduledDateTime; returns confirmation
+
+ * [ ] getBulkScheduleDeployStatus accepts requestId; returns schedule status details
+
+h3. AC5: Package Testing Tools
+ * [ ] bulkTesting accepts testDetails, testEndDate, batchId; returns confirmation
+
+ * [ ] scheduleBulkTesting accepts same parameters plus scheduledDateTime; returns confirmation
+
+ * [ ] markPackages accepts allowed boolean and packageIds list; returns confirmation
+
+ * [ ] markOperation accepts allowed boolean and packageTestingId; returns confirmation
+
+ * [ ] getPackageTestingByPackageId accepts packageId; returns SystemUpdateTestingResponse
+
+ * [ ] getBulkTestingStatus accepts batchId; returns batch testing status
+
+h3. AC6: Error Handling
+ * [ ] When DMS API returns an error, the tool response includes a meaningful error message (not a raw stack trace)
+
+ * -[ ] Error messages from DMS are truncated to 200 characters maximum-
+
+ * -[ ] Connection timeouts to DMS API (10s connect, 30s read/write) produce a descriptive error-
+
+ * -[ ] Failed requests to DMS API are retried up to 2 times with 500ms delay-
+
+h3. AC7: MCP Inspector Compatibility
+ * [ ] All 13 tools are listed when calling tools/list via MCP protocol
+
+ * [ ] Each tool has a description and parameter schema (via @Tool / @ToolParam annotations)
+
+ * [ ] Tools can be invoked from any standard MCP inspector (e.g., MCP Inspector, Claude Desktop, or similar client)
+
+ * [ ] The HTTP-Streamable transport works end-to-end (session creation, tool calls, session termination: when session is deleted we should not be able to access it next time)
+
+h3. AC8: Deployment and Infrastructure
+ * [ ] The service is running and healthy on: dms-dev, dms-qa,
+
+ * [ ] -Health endpoint accessible at /dms/mcp-service/actuator/health on port 9000-
+
+ * -[ ] Ambassador routing resolves https://<env-host>/dms/mcp-service/mcp to the service-
+
+ * [ ] -CORS headers allow x-user-jwt, Mcp-Session-Id, Mcp-Protocol-Version in requests-
+
+ 
+h3. AC9: Environment-Specific Connectivity
+ * [ ] dms-dev: api.naea1.uds-dev.lenovo.com/dms/mcp-service/mcp routes correctly; DMS proxy points to dev DMS API
+
+ * [ ] dms-qa: api.naea1.uds-qa.lenovo.com/dms/mcp-service/mcp routes correctly; DMS proxy points to qa DMS API
+
+ 
+
+================================================================================
+key: GAI-6007
+summary: ARB Design Review for UDS IQ 25.11 Release
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 0.0
+labels: ["IQ-Platform", "NotQATestable", "UGAIN"]
+assignee (displayName): 'Omkumar TC'
+created: 2025-11-04T15:38:56.000+0000
+updated: 2026-03-18T13:08:36.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+ARB Design Review for UDS IQ 25.11 Release
+
+ATDD - Acceptance Criteria (customfield_12003):
+ARB Design Review for UDS IQ 25.11 Release
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+ARB Design Review for UDS IQ 25.11 Release
+
+================================================================================
+key: GAI-6081
+summary: 26.03 FTR Training
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 2.0
+labels: ["Groomed", "IQ-Platform", "NotQATestable"]
+assignee (displayName): 'Tom Thomas3'
+created: 2025-11-12T15:27:10.000+0000
+updated: 2026-03-10T05:02:22.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6504
+summary: Consumer-Aligned Data Product Semantic Model: Crash Issues
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 2.0
+labels: ["ATDDCompleted", "IQ-Platform"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2025-12-23T11:34:50.000+0000
+updated: 2026-03-19T03:36:48.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+Developer
+
+ATDD - Acceptance Criteria (customfield_12003):
+As a developer, I should be able to query the data related to Crash issues involving Predicted Crashes and InsightFinder Predictions. 
+
+The queries belong to LDI feature and user who have the corresponding license with the feature will be enabled to query.
+
+The following columns are exposed as part of the data product.
+ # {{device_name}}
+ # {{device_serial_number}}
+ # {{device_id}}
+ # {{crash_code}}
+ # {{crash_type}}
+ # {{bucket_id}}
+ # {{detected_on}}
+ # {{tab}}
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-6505
+summary: Fine-Tuning: OS & Critical Updates
+issuetype: Story
+status: In Code Review
+story_points (customfield_10002): 3.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Singuluri Akash kumar169'
+created: 2025-12-23T11:36:54.000+0000
+updated: 2026-03-18T04:58:33.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+TBD
+
+ATDD - Acceptance Criteria (customfield_12003):
+TBD
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-6565
+summary: Upgrade to Angular version 20
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["Groomed", "IQ-Platform"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2025-12-30T12:06:06.000+0000
+updated: 2026-03-18T05:11:20.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+As a
+I want to 
+So that
+
+ATDD - Acceptance Criteria (customfield_12003):
+*Feature owner:*
+
+Rahul (FE)
+
+*Acceptance criteria: @Rahul to update*
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+N/A
+
+================================================================================
+key: GAI-6836
+summary: 26.02 | Deployment activities
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 5.0
+labels: ["IQ-Platform", "NotQATestable"]
+assignee (displayName): 'Shaik limansha Safreen'
+created: 2026-02-03T11:54:59.000+0000
+updated: 2026-03-11T09:41:00.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6866
+summary: [DataViz] Enable DataViz v2 endpoint to use new GQL Generation Agent
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 2.0
+labels: ["IQ-Platform", "NotRequireCase"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2026-02-09T08:04:02.000+0000
+updated: 2026-03-19T03:28:54.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+TBD
+
+ATDD - Acceptance Criteria (customfield_12003):
+TBD
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-6915
+summary: QA Task : Semantic Data Service – PGVectorStore Migration
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 1.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Animesh Sen7'
+created: 2026-02-13T05:20:30.000+0000
+updated: 2026-03-04T02:12:04.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6951
+summary: [Chat Enhancement] Implement follow-up questions for ambiguous queries
+issuetype: Story
+status: In Code Review
+story_points (customfield_10002): 3.0
+labels: ["Groomed", "IQ-Platform"]
+assignee (displayName): 'Akash Choudhary'
+created: 2026-02-20T04:57:00.000+0000
+updated: 2026-03-20T10:26:21.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+As a user, when my question is unclear, the system asks a relevant follow-up question and provides a final answer once my intent is clarified.
+
+ATDD - Acceptance Criteria (customfield_12003):
+ 
+||*Given*||*When*||*Then*||
+|A user submits a query and the system identifies it as low confidence (ambiguous or uncertain)|The system processes the query|The system not just returns a final answer but also displays a contextual follow-up question in the same chat thread|
+|A follow-up question is already shown to the user|The user provides the updated prompt|The system proceeds using the clarified intent and returns a response within the same thread|
+|A user submits a query and the system identifies it as high confidence|The system processes the query|The system returns a final answer directly without showing any follow-up questions|
+|The query is handled by the existing chat orchestration|A follow-up is triggered or resolved|The interaction remains within the same thread and follows standard chat behavior|
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-6969
+summary: [PoC] Agentcore as agent building platform
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 5.0
+labels: ["IQ-Platform", "POC"]
+assignee (displayName): 'Kiran Kamutala'
+created: 2026-02-24T15:15:20.000+0000
+updated: 2026-03-17T12:52:31.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6970
+summary: [PoC] Perf testing for lakehouse data
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["IQ-Platform", "POC"]
+assignee (displayName): 'Jyoti Yadav1'
+created: 2026-02-24T15:22:08.000+0000
+updated: 2026-03-17T12:55:35.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6979
+summary: Post-Ingestion evaluation for data ingestion pipeline
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["IQ-Platform", "NotQATestable"]
+assignee (displayName): 'Thach Vu2'
+created: 2026-02-25T14:49:30.000+0000
+updated: 2026-03-18T13:11:33.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+|| Given || When || Then ||
+| The KB and capabilities ingestion pipeline is triggered | The ingestion run succeeds | RAGAS testing is triggered and the final score is checked. If the score does not pass, the database is rolled back |
+| A specific language is provided as a parameter to the ingestion pipeline | The ingestion run is triggered | Only the KB and capabilities for the selected language are ingested without affecting other language data |
+| The RAGAS testing flag is enabled or disabled before triggering the ingestion pipeline | The ingestion run succeeds | RAGAS testing is triggered if the flag is enabled and the score is checked. If the score does not pass, the database is rolled back. If the flag is disabled, the pipeline completes without running RAGAS testing |
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-6995
+summary: Stabilize code generation agent failure scenarios
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["Groomed", "IQ-Platform", "OneTimeCase"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2026-02-26T03:01:55.000+0000
+updated: 2026-03-19T03:18:15.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+This task focuses on investigating and addressing failure scenarios observed in the code generation agent, particularly cases where multi-step generation takes excessive time.
+
+ATDD - Acceptance Criteria (customfield_12003):
+||Given||When||Then||
+|Given a data insight prompt to show a table of data|when the formatting code generation is executed|the code generation agent should not fail for common failures* and create the correct code in first attempt|
+
+*The common failures are listed in description
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-7001
+summary: Security Fixes - Sprint 25
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 5.0
+labels: ["IQ-Platform", "Security"]
+assignee (displayName): 'Carolyne Sealy'
+created: 2026-02-26T03:18:26.000+0000
+updated: 2026-03-18T02:14:16.000+0000
+priority: Minor
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7076
+summary: [Dynamic Caching] Cache and store user queries in a Vector Database
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 2.0
+labels: ["IQ-Platform", "NotQAtestable"]
+assignee (displayName): 'Carolyne Sealy'
+created: 2026-03-02T07:33:43.000+0000
+updated: 2026-03-13T11:43:50.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+*TBD*
+
+ATDD - Acceptance Criteria (customfield_12003):
+TBD
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+N/A
+
+================================================================================
+key: GAI-7082
+summary: Modify  RedisSaver to have only one check pointer as a key for one interaction in a conversation
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2026-03-02T07:47:11.000+0000
+updated: 2026-03-23T05:15:47.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7089
+summary: Locust Script and Synthetic Data Generation Warm-up
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 2.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Sri Talluri'
+created: 2026-03-02T14:12:18.000+0000
+updated: 2026-03-09T09:22:36.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7092
+summary: Create MongoDB Depot on DataOS
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 1.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Sri Talluri'
+created: 2026-03-03T07:42:36.000+0000
+updated: 2026-03-06T05:25:37.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7093
+summary: Set up Nilus service and configure initial + stream flares
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 5.0
+labels: ["IQ-Platform"]
+assignee (displayName): 'Sri Talluri'
+created: 2026-03-03T07:43:01.000+0000
+updated: 2026-03-17T10:44:51.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7107
+summary:  Enable Ask Lita in LDO Dashboard (Right Panel Only) - Part 1
+issuetype: Story
+status: Closed
+story_points (customfield_10002): 3.0
+labels: ["Groomed", "IQ-Platform", "NotQATestable"]
+assignee (displayName): 'Dharamvir Yadav3'
+created: 2026-03-04T16:43:48.000+0000
+updated: 2026-03-17T14:55:12.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+As a user, I want to access the Ask Lita feature directly from the right panel of the LDO dashboard, so that I can start a conversational interaction in a familiar, transactional manner without leaving the dashboard.
+
+ATDD - Acceptance Criteria (customfield_12003):
+[https://image-based-screen-c-rprx.bolt.host|https://image-based-screen-c-rprx.bolt.host/]
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+TBD
+
+================================================================================
+key: GAI-7290
+summary: [DMS MCP] Evaluate MCP Scalability Options
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 5.0
+labels: ["IQ-Platform", "NotQATestable"]
+assignee (displayName): 'Roman Koreniev'
+created: 2026-03-09T18:19:16.000+0000
+updated: 2026-03-17T18:24:00.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7355
+summary: 26.03 | Deployment activities
+issuetype: Task
+status: In Code Review
+story_points (customfield_10002): None
+labels: ["IQ-Platform", "NotQATestable"]
+assignee (displayName): 'ROSHAN P Rajesh1'
+created: 2026-03-11T09:40:51.000+0000
+updated: 2026-03-18T04:58:35.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+
+
+================================================================================
+key: GAI-7465
+summary: Update SSL Env Variables In LLM Service Docker File
+issuetype: Task
+status: Closed
+story_points (customfield_10002): 0.0
+labels: []
+assignee (displayName): 'Omkumar TC'
+created: 2026-03-17T17:27:32.000+0000
+updated: 2026-03-17T22:41:14.000+0000
+priority: Major
+components: ["UGAIN-PL"]
+
+ATDD - As Persona (customfield_12200):
+
+
+ATDD - Acceptance Criteria (customfield_12003):
+
+
+Acceptance Criteria (customfield_10400):
+
+
+ATDD - Domain Terms (customfield_12004):
+

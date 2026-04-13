@@ -20,14 +20,14 @@ A pre-generation guardrail restricts chatbot responses to fleet management and I
 
 | ID | Requirement description |
 |----|--------------------------|
-| REQ-1 | Pre-generation domain classification (rules layer) — block obvious out-of-domain queries before LLM call. |
-| REQ-2 | Pre-generation domain classification (lightweight classifier) — classify remaining queries; high-confidence out-of-domain → redirect without LLM call. |
-| REQ-3 | Pre-generation domain classification (LLM fallback) — for low-confidence queries only; structured classification call before main LLM. |
-| REQ-4 | Two-stage classification — Stage 1 domain check (IN_DOMAIN / OUT_OF_DOMAIN); Stage 2 capability routing (KB, DATA_INSIGHTS, ACTIONS, AGENTIC, UNSUPPORTED). |
-| REQ-5 | Out-of-domain redirect — clear message; no generation attempt; no hint of future support. |
-| REQ-6 | In-domain, out-of-capability redirect — softer message; list supported capabilities; invite retry within scope. |
-| REQ-7 | Observability — log classification result, confidence score, and path taken (rules / classifier / LLM) for tuning and auditing. |
-| REQ-8 | System prompt reinforcement — domain rules also enforced in system prompt as secondary layer. |
+| REQ-DG-01 | Pre-generation domain classification (rules layer) — block obvious out-of-domain queries before LLM call. |
+| REQ-DG-02 | Pre-generation domain classification (lightweight classifier) — classify remaining queries; high-confidence out-of-domain → redirect without LLM call. |
+| REQ-DG-03 | Pre-generation domain classification (LLM fallback) — for low-confidence queries only; structured classification call before main LLM. |
+| REQ-DG-04 | Two-stage classification — Stage 1 domain check (IN_DOMAIN / OUT_OF_DOMAIN); Stage 2 capability routing (KB, DATA_INSIGHTS, ACTIONS, AGENTIC, UNSUPPORTED). |
+| REQ-DG-05 | Out-of-domain redirect — clear message; no generation attempt; no hint of future support. |
+| REQ-DG-06 | In-domain, out-of-capability redirect — softer message; list supported capabilities; invite retry within scope. |
+| REQ-DG-07 | Observability — log classification result, confidence score, and path taken (rules / classifier / LLM) for tuning and auditing. |
+| REQ-DG-08 | System prompt reinforcement — domain rules also enforced in system prompt as secondary layer. |
 
 **Redirect messages:**
 - **Out-of-domain:** "I can only assist with fleet management and IT asset questions."
