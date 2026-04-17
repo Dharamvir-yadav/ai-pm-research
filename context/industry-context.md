@@ -13,13 +13,13 @@
 
 - Enterprise IT orgs centralize **device lifecycle**, **compliance**, and **service operations** across large fleets.
 - **ITSM and ITAM** tooling often integrates with endpoint management; buyers expect **auditability**, **role-based access**, and **multi-tenant** or **org-boundary** safety.
-- **AI assistants** in this space are judged on **trust**, **action safety**, **latency**, and **grounding** in fleet data and KB—not generic chat quality alone.
+- **AI assistants** in this space are judged on **trust**, **accuracy** , **action safety**, **latency**, **compliance**  and **grounding** in fleet data
 - **Regulated industries** (finance, healthcare, public sector) amplify requirements for **logging**, **data residency**, and **change control**.
 - **Cost and operational load** of LLM-backed features matter next to simpler automation where automation suffices.
 
 ## Industry norms (best practices)
 
-- Apply **norms and common practices** from **IT fleet, IT asset management, and adjacent enterprise endpoint management** when researching and writing requirements.
+- **Always** apply **norms and common practices** from **IT fleet, IT asset management, and adjacent enterprise endpoint management** when researching and writing requirements.
 - Do **not** substitute vague “best practices” from unrelated domains (e.g. consumer apps, unrelated B2B verticals) for domain-appropriate judgment.
 
 ## Personas & jobs-to-be-done (examples)
@@ -32,6 +32,10 @@
 | **IT Admin** | Trigger or guide **actions** (e.g. scan, update, onboard) with clear audit trail and guardrails. |
 | **IT Admin** | Use **KB and data insights** together to explain “why” and “how many” for incidents and planning. |
 | **IT Operations lead** | Compare options and vendor patterns when evolving **agentic** or **automated** workflows safely. |
+| **IT Admins lead** | Evaluvate device statuses like warranty, battery health, storage etc **agentic** and takes action on fleet. |
+| **IT Admins lead** | Monitor current state of system updates, OS updats and take **relevant actions** to keep the IT fleet compliant |
+
+**Above is not a comprehensive list of JTBD by IT Admins. Always conosder comprehensive duties**
 
 *(Add or replace rows for your organization.)*
 
@@ -48,7 +52,7 @@
 **Consider SMB / mid-market comparables for inspiration:** **yes**
 
 - **yes** — You may use **small / medium / startup** products in the same problem space for **ideas and UX patterns** only; label them **non-enterprise / inspiration**, not like-for-like enterprise comparables.
-- **no** — Restrict market scan for comparables to **enterprise** lists below only; do not use SME products as research inputs.
+
 
 ## Key competitors — enterprise (direct: fleet / ITAM / endpoint)
 

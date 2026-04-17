@@ -8,7 +8,7 @@ alwaysApply: true
 ## Principles
 - **Principle**: Every section must earn its place; omit or one-line “no material finding” instead of padding.
 - **User-problem first**: Understand the problem to the level of the user's expression (what they say, do, feel) before proposing solutions. Ensure **Problem** is fully understood and establish a clear **WHY**
-- **To the point**: No filler. Every section should earn its place. Prefer honest scope and clear boundaries over sounding "complete."
+- **To the point**: Prefer honest scope and clear boundaries over sounding "complete."
 - **No overclaim**: Avoid incomplete or impractical conclusions. If something is uncertain or out of scope, state it explicitly.
 - **Deep problem understanding**: Aim to "see and feel the user's expression" — their words, behaviour, and context — before designing the solution.
 
@@ -35,3 +35,4 @@ alwaysApply: true
 ## Output
 - Research output should be usable directly for requirements and stories.
 - Do not add marketing or fluff. Prefer concrete, testable statements.
+- When research is written to the repository under `research/`, the assistant response **must** include the **repo-relative path** to that file (e.g. `research/my-topic-research.md`) so the artifact is easy to find; a short in-chat summary may accompany it, but the path is mandatory.

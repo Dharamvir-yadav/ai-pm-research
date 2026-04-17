@@ -21,6 +21,10 @@ When using Jira or Confluence MCP:
 4. **Other**: Use the "Other" section for any additional default links (e.g. default board ID, links to other tools).
 5. **Save** the file. Agents (publish_confluence, publish_jira) read these values and ask for user confirmation before using them.
 
+## Jira publish — confirmation
+
+- Agents **must not** use Jira MCP to **create** or **link** issues until the user has **explicitly confirmed** both the **Jira project key** and the **Epic issue key** for **this** publish. If either was stated earlier in the chat, **re-state it and ask for confirmation** before invoking MCP. Details: `AGENTS.md` (Atlassian MCP defaults → Epic) and `.cursor/agents/publish_jira.md`.
+
 ## Secrets (tokens)
 
 Keep MCP API tokens out of the repo. Store them in `.cursor/.env` (e.g. `MCP_JIRA_TOKEN`, `MCP_CONF_TOKEN`). That file is gitignored and listed in `.cursorignore` so it is never committed or exposed to the agent. Export the same variables in your shell (e.g. in `~/.zshrc`) if Cursor does not load `.cursor/.env` when resolving MCP headers.

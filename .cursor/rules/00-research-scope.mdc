@@ -33,9 +33,9 @@ This **repository** is used for **feature-level research and requirements** with
 - **Primary** like-for-like comparables: **enterprise** products from industry context. Consumer-only products (e.g. ChatGPT consumer) may be referenced for AI/UX patterns but are not direct competitors.
 
 ## Complaince
-- Ensure you feature considers inputs from NIST-AIRMF, EU AI Act and AI rules applied by US Federal agencies. Recommend if these frameworks explicity demand any compliance requirement to be met in context of feature
+- Ensure your feature considers inputs from NIST-AIRMF, EU AI Act and AI rules applied by US Federal agencies. Recommend if these frameworks explicity demand any compliance requirement to be met in context of feature
 - Keep the independent compliance section,
-- Summarize cross-cutting themes in 2–4 bullets; full article-by-article treatment only when the user or initiative explicitly requires legal-grade depth.
+- Summarize cross-cutting themes in 2–4 bullets; full article-by-article treatment only when the user or initiative  requires legal-grade depth.
 - If a section of these framework like NIST-AIRMF or EU Act directly impacts, provide the specific section summary as is or a link to it. 
 
 ## Boundaries

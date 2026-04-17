@@ -1,6 +1,6 @@
 # Project defaults
 
-Add your Confluence and Jira links below. Agents use this file for space key, parent pages, and project key; they always ask for your confirmation before using them.
+Add your Confluence and Jira links below. Agents use this file for space key, parent pages, and project key; they **always** ask for your confirmation before using them.
 
 See **How to add default Confluence and Jira links** in `.cursor/rules/03-jira-confluence-defaults.mdc` for where to find these values.
 
@@ -36,7 +36,7 @@ When creating or publishing stories in Jira, house the content as follows:
 | Domain terms placeholder | **ATDD - Domain Terms** — use **"To do"** |
 | Additional info (if any) | **Description** |
 
-### Default field values
+### Default mandatory field values
 
 | Field | Default value |
 |-------|---------------|

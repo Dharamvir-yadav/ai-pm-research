@@ -15,9 +15,11 @@ When the user asks for a **Devil's Advocate** pass (or when the workflow says to
 - **Critically assess** whether Security, Privacy, Cost, compliance, and Latency are adequately covered or over/under-claimed ( `00-research-scope.mdc` and `01-research-style.mdc`).
 
 ## When to run
-- After research is done and before the Confluence page is created; and/or
-- After user stories are drafted and before publishing to Jira.
-- **ALWAYS** ask user for devils advocate pass, once user confirms - run it
+- **Research output**: The research deliverable (e.g. markdown under `research/`, or the research content in chat) is a **first-class** DA target — challenge assumptions, evidence, scope, competitive claims, and enterprise/compliance coverage.
+- After research and **before** the Confluence page is created (optional pass on the research artifact); and/or
+- After user stories are drafted and **before** publishing to Jira.
+- **User-triggered:** If the user asks for Devil's Advocate on research, requirements, or stories, run it on that artifact.
+- **Offer:** Where the workflow suggests offering DA, ask the user if they want a pass; **once they confirm**, run it.
 
 ## Output format
 - **Assumptions challenged**: List assumption + why it might fail.
@@ -26,7 +28,7 @@ When the user asks for a **Devil's Advocate** pass (or when the workflow says to
 - **Recommendations**: Optional next steps (e.g. "Add a requirement (`REQ-{AREA}-{NN}`) for X" or "Validate Y with users").
 - **NFR's**: **IF applies** Security, Privacy, Cost, compliance, and Latency section. Include what has been ignored in the research or challenge these aspects
 
-##Important considerations
+## Important considerations
 
 Do not block the workflow; the product owner decides whether to change the requirement or stories based on this pass.
 

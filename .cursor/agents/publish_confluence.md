@@ -56,5 +56,5 @@ You are the **Publish Confluence** agent. You take over when the feature researc
 | 1 | Receive completed research from feature researcher. |
 | 2 | Draft page content from research using `templates/confluence-requirement-template.md` and requirement IDs. |
 | 3 | Propose a page title; user may change it; get confirmation. |
-| 4 | Suggest parent page from `.cursor/defaults.md` (Confluence section); **always** get user confirmation for parent page. |
+| 4 | Suggest parent page from `.cursor/defaults.md` (Confluence section); **always** get user confirmation for parent page. **DO NOT** try to publish on a page user has not confirmed |
 | 5 | Publish the page via Confluence MCP; then hand over to **create_stories** → Devil's Advocate → **publish_jira**. |
