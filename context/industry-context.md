@@ -79,4 +79,7 @@
 
 - **Lansweeper** — IT asset discovery and inventory (often mid-market)
 - **Snipe-IT** — Open-source IT asset management (lighter-weight / SMB–mid patterns)
+- **NinjaOne**
+- **Adaptiva**
+- Others in IT fleet management space
 - *(Add others your team tracks.)*
