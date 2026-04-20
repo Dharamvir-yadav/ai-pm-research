@@ -6,8 +6,8 @@
 
 ## Industry & domain
 
-- **Vertical:** IT **fleet** and **IT asset / endpoint management** in **enterprise** context.
-- **Research and requirements** should stay inside this problem space unless the user explicitly expands scope in chat.
+- **DOMAIN:** IT **fleet** and **IT asset / endpoint management** in **enterprise** context.
+- **Research and requirements** should stay inside this **DOMAIN** space unless the user explicitly expands scope in chat.
 
 ## Industry snapshot
 
@@ -20,7 +20,7 @@
 ## Industry norms (best practices)
 
 - **Always** apply **norms and common practices** from **IT fleet, IT asset management, and adjacent enterprise endpoint management** when researching and writing requirements.
-- Do **not** substitute vague “best practices” from unrelated domains (e.g. consumer apps, unrelated B2B verticals) for domain-appropriate judgment.
+- Do **NOT** substitute vague “best practices” from unrelated domains (e.g. consumer apps, unrelated B2B verticals) for domain-appropriate judgment.
 
 ## Personas & jobs-to-be-done (examples)
 
@@ -35,7 +35,7 @@
 | **IT Admins lead** | Evaluvate device statuses like warranty, battery health, storage etc **agentic** and takes action on fleet. |
 | **IT Admins lead** | Monitor current state of system updates, OS updats and take **relevant actions** to keep the IT fleet compliant |
 
-**Above is not a comprehensive list of JTBD by IT Admins. Always conosder comprehensive duties**
+**Above is not a comprehensive list of JTBD by IT Admins. Always consider comprehensive duties**
 
 *(Add or replace rows for your organization.)*
 
@@ -77,8 +77,6 @@
 
 *Use only when **Research toggle** is **yes**. Label as **non-enterprise / inspiration** in research output.*
 
-- **Lansweeper** — IT asset discovery and inventory (often mid-market)
-- **Snipe-IT** — Open-source IT asset management (lighter-weight / SMB–mid patterns)
 - **NinjaOne**
 - **Adaptiva**
 - Others in IT fleet management space

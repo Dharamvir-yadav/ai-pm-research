@@ -12,25 +12,27 @@ alwaysApply: true
 - **No overclaim**: Avoid incomplete or impractical conclusions. If something is uncertain or out of scope, state it explicitly.
 - **Deep problem understanding**: Aim to "see and feel the user's expression" — their words, behaviour, and context — before designing the solution.
 
-## Competition & Market Scan
-- **Always include** a competition/market analysis section in research. Look at how direct competitors and relevant enterprise AI products handle (or fail to handle) the same problem.
+## Competition & Market Scan **ONLY FOR COMPLEX FEATURES involving Artificial intelligence like LLMS/Agentic workkflows etc**
+- **Always Include** a competition/market analysis section in research. Look at how direct competitors and relevant enterprise AI products handle (or fail to handle) the same problem.
 - **Competitor list**: Use the **key competitors** and policy in **`context/industry-context.md`** (and **Competitive Landscape** / **Boundaries** in `00-research-scope.mdc`). If the feature area has competitors not on that list, include them and note they are outside the standard set.
-- **Genuine research only**: Do not fabricate competitor capabilities. If you cannot verify a feature or behaviour from a public source, say so explicitly ("unverified" or "could not confirm").
-- **Citations**: Cite sources — link to the product's specification page, documentation, blog post, press release, or social media post. If the source is a community discussion or third-party review, note that. Prefer primary sources (vendor's own site) over secondary.
+- **Genuine research only**: **DO NOT**** fabricate competitor capabilities. If you cannot verify a feature or behaviour from a public source, **DO NOT SHOW IT** in research
+- **Citations**: Cite sources — link to the product's specification page, documentation, blog post, press release, or social media post. If the source is a community discussion or third-party review, note that. **Prefer** primary sources (vendor's own site) over secondary.
 - **Format**: A concise table or bullet list per competitor — what they do, how, and what's relevant to the feature being researched. Do not write paragraphs per competitor.
+- Always ensure the competitor has a **Same/similar** product and feature.
+- It is not necessary to always include all the competitors
 
 ## Enterprise Considerations
-- **Always assess** the following for every feature research — flag findings but **do not mandatorily impose** them as requirements unless the evidence warrants it:
+- **Always assess** the following for every feature research — flag findings but **DO NOT mandatorily impose** them as requirements unless the evidence warrants it:
   - **Security**: Authentication, authorisation, data exposure, tenant isolation, injection risks.
   - **Privacy**: PII handling, data retention, consent, regional/tenant policies.
   - **Cost**: Infrastructure, API calls, storage, compute — especially LLM/AI costs vs simpler automation alternatives.
   - **Latency**: User-perceived response time impact; whether the feature adds blocking steps or async overhead.
 - These are **assessments, not mandates**. If a feature has no meaningful security implication, say "no material security concern identified" rather than inventing one. If cost is negligible, say so.
 
-## Open Questions
+## Open Questions **CONSIDER this section only if it is relevant**
 - If the research surfaces questions for **legal, compliance, policy, or other stakeholders**, list them in a dedicated section.
-- Keep the list **objective, to-the-point, and exclusive** — only questions that genuinely need stakeholder input or could block implementation.
-- Do not pad with speculative or obvious questions. Fewer, sharper questions are better than a long list.
+- Keep the list **objective, to-the-point, and exclusive** — only questions that **genuinely** need stakeholder input or could block implementation.
+- Fewer, sharper questions are better than a long list.
 
 ## Output
 - Research output should be usable directly for requirements and stories.
